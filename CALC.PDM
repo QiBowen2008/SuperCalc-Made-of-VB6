@@ -1,0 +1,90 @@
+[Root]
+Most Recent Package=1
+
+
+[Package|1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\VB\计算器\包
+
+[Package|1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|1|Files Found]
+
+[Package|1|Files Released]
+
+[Package|1|Missing Dependency Information]
+
+[Package|1|Out-of-Date Dependency Information]
+
+[Package|1|Files Added]
+
+[Package|1|Files Removed]
+
+[Package|1|Files In Project]
+D:\VB\计算器\新建文件夹\CALC4.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\vb6chs.dll=Yes
+D:\软件\VB\Wizards\PDWizard\SETUP.EXE=Yes
+D:\软件\VB\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|1|Configure Registry Files]
+Applicable=No
+
+[Package|1|Configure Remote Servers]
+Applicable=No
+
+[Package|1|Install Locations]
+D:\VB\计算器\新建文件夹\CALC4.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vb6chs.dll=$(WinSysPath)
+D:\软件\VB\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\软件\VB\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|1|Configure Shared Files]
+Applicable=Yes
+D:\VB\计算器\新建文件夹\CALC4.exe=No
+
+[Package|1|Distribution]
+Type=single
+Size=
+Title=CALC
+
+[Package|1|IconGroups]
+Group0=CALC
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|1|CALC]
+Icon1=CALC4.exe
+Title1=CALC
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|1|Package]
+PackageFolder=D:\VB\计算器\包
+ProjectFolder=D:\VB\计算器
+ServerSideCab=
+File1=D:\VB\计算器\包\setup.exe
+File2=D:\VB\计算器\包\Setup.Lst
+File3=D:\VB\计算器\包\CALC4.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
