@@ -14,6 +14,22 @@ Begin VB.Form frmAbout
    ScaleMode       =   0  'User
    ScaleWidth      =   5380.766
    ShowInTaskbar   =   0   'False
+   Begin VB.CommandButton CMDSYSINFO 
+      Caption         =   "系统信息"
+      Height          =   405
+      Left            =   4200
+      TabIndex        =   8
+      Top             =   3120
+      Width           =   1170
+   End
+   Begin VB.CommandButton cmdok 
+      Caption         =   "确定"
+      Height          =   405
+      Left            =   4200
+      TabIndex        =   7
+      Top             =   2520
+      Width           =   1170
+   End
    Begin VB.PictureBox picIcon 
       AutoSize        =   -1  'True
       ClipControls    =   0   'False
@@ -23,27 +39,29 @@ Begin VB.Form frmAbout
       ScaleHeight     =   337.12
       ScaleMode       =   0  'User
       ScaleWidth      =   337.12
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   240
       Width           =   540
    End
-   Begin VB.CommandButton cmdOK 
-      Cancel          =   -1  'True
-      Caption         =   "确定"
-      Default         =   -1  'True
-      Height          =   345
-      Left            =   4125
-      TabIndex        =   0
-      Top             =   2625
-      Width           =   1500
-   End
-   Begin VB.CommandButton cmdSysInfo 
-      Caption         =   "系统信息(&S)..."
-      Height          =   345
-      Left            =   4140
-      TabIndex        =   2
-      Top             =   3075
-      Width           =   1485
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "打开此软件github主页"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H8000000D&
+      Height          =   180
+      Left            =   1080
+      TabIndex        =   6
+      Top             =   2040
+      Width           =   1800
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -53,16 +71,17 @@ Begin VB.Form frmAbout
          Name            =   "宋体"
          Size            =   12
          Charset         =   134
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   240
       Left            =   1080
-      TabIndex        =   7
+      TabIndex        =   5
       Top             =   1560
-      Width           =   1680
+      Width           =   1785
    End
    Begin VB.Line Line1 
       BorderColor     =   &H00808080&
@@ -78,7 +97,7 @@ Begin VB.Form frmAbout
       ForeColor       =   &H00000000&
       Height          =   330
       Left            =   1050
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   1125
       Width           =   3885
    End
@@ -87,7 +106,7 @@ Begin VB.Form frmAbout
       ForeColor       =   &H00000000&
       Height          =   480
       Left            =   1050
-      TabIndex        =   5
+      TabIndex        =   3
       Top             =   240
       Width           =   3885
    End
@@ -104,17 +123,17 @@ Begin VB.Form frmAbout
       Caption         =   "版本1.0"
       Height          =   225
       Left            =   1050
-      TabIndex        =   6
+      TabIndex        =   4
       Top             =   780
       Width           =   3885
    End
    Begin VB.Label lblDisclaimer 
-      Caption         =   "警告: ..."
+      Caption         =   "警告: 此软件完全免费，代码在GitHub主页上展示，任何人可为开发贡献，请勿将代码用于商业目的"
       ForeColor       =   &H00000000&
       Height          =   825
       Left            =   255
-      TabIndex        =   4
-      Top             =   2625
+      TabIndex        =   2
+      Top             =   2760
       Width           =   3630
    End
 End
@@ -124,6 +143,11 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" _
+    (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, _
+    ByVal lpParameters As String, ByVal lpDirectory As String, _
+    ByVal nShowCmd As Long) As Long
 
 ' 注册表关键字安全选项...
 Const READ_CONTROL = &H20000
@@ -162,9 +186,11 @@ Private Sub cmdOK_Click()
 End Sub
 
 Private Sub Form_Load()
+    
     Me.Caption = "关于 " & App.title
     lblVersion.Caption = "版本 " & App.Major & "." & App.Minor & "." & App.Revision
     lblTitle.Caption = App.title
+    
 End Sub
 
 Public Sub StartSysInfo()
@@ -250,4 +276,10 @@ GetKeyError:      ' 错误发生后将其清除...
     GetKeyValue = False                                     ' 返回失败
     rc = RegCloseKey(hKey)                                  ' 关闭注册表关键字
 End Function
+
+Private Sub Label2_Click()
+    On Error GoTo Err
+    Call ShellExecute(hwnd, "open", "https://github.com/QiBowen2008/SuperCalc-Made-of-VB6", vbNullString, vbNullString, &H0)
+Err:
+End Sub
 

@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form frmGougudingli1 
+Begin VB.Form frmGougudingli 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知两直角边求斜边"
    ClientHeight    =   3990
@@ -21,7 +21,6 @@ Begin VB.Form frmGougudingli1
       Begin VB.ComboBox Combo6 
          Height          =   300
          Left            =   240
-         Style           =   2  'Dropdown List
          TabIndex        =   11
          Top             =   2280
          Width           =   1095
@@ -29,7 +28,6 @@ Begin VB.Form frmGougudingli1
       Begin VB.ComboBox Combo5 
          Height          =   300
          Left            =   240
-         Style           =   2  'Dropdown List
          TabIndex        =   10
          Top             =   1200
          Width           =   1095
@@ -37,7 +35,6 @@ Begin VB.Form frmGougudingli1
       Begin VB.ComboBox Combo4 
          Height          =   300
          Left            =   240
-         Style           =   2  'Dropdown List
          TabIndex        =   9
          Top             =   240
          Width           =   1095
@@ -72,15 +69,6 @@ Begin VB.Form frmGougudingli1
    End
    Begin VB.CommandButton Command2 
       Caption         =   "清除数据"
-      BeginProperty Font 
-         Name            =   "宋体"
-         Size            =   9
-         Charset         =   134
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   375
       Left            =   4320
       TabIndex        =   4
@@ -89,15 +77,6 @@ Begin VB.Form frmGougudingli1
    End
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
-      BeginProperty Font 
-         Name            =   "宋体"
-         Size            =   9
-         Charset         =   134
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   375
       Left            =   1680
       TabIndex        =   0
@@ -170,12 +149,14 @@ Begin VB.Form frmGougudingli1
       Width           =   900
    End
 End
-Attribute VB_Name = "frmGougudingli1"
+Attribute VB_Name = "frmGougudingli"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
 Private Sub Form_Load()
-
+    If lang = "英文" Then
+        Command1.Caption = langjisuanen
+        Command2.Caption = langfuweien
+    End If
 End Sub

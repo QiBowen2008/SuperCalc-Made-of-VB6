@@ -16,7 +16,7 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":0000
       Left            =   3720
       List            =   "SJuxing.frx":0013
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   1440
       Width           =   1095
    End
@@ -25,7 +25,7 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":002B
       Left            =   1080
       List            =   "SJuxing.frx":002D
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   2280
       Width           =   2295
    End
@@ -34,7 +34,7 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":002F
       Left            =   1080
       List            =   "SJuxing.frx":0031
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   1440
       Width           =   2295
    End
@@ -43,15 +43,15 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":0033
       Left            =   1080
       List            =   "SJuxing.frx":0035
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   600
       Width           =   2295
    End
-   Begin VB.CommandButton Command6 
+   Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
-      Left            =   4440
-      TabIndex        =   10
+      Left            =   4200
+      TabIndex        =   9
       Top             =   3240
       Width           =   990
    End
@@ -59,7 +59,7 @@ Begin VB.Form frmSJuxing
       Caption         =   "清除数据"
       Height          =   360
       Left            =   5160
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   2280
       Width           =   990
    End
@@ -67,7 +67,7 @@ Begin VB.Form frmSJuxing
       Caption         =   "清除数据"
       Height          =   360
       Left            =   5160
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   1440
       Width           =   990
    End
@@ -75,7 +75,7 @@ Begin VB.Form frmSJuxing
       Caption         =   "清除数据"
       Height          =   360
       Left            =   5160
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   600
       Width           =   990
    End
@@ -84,7 +84,7 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":0037
       Left            =   3720
       List            =   "SJuxing.frx":004A
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   2280
       Width           =   1095
    End
@@ -93,31 +93,23 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":007E
       Left            =   3720
       List            =   "SJuxing.frx":0091
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   600
       Width           =   1095
-   End
-   Begin VB.CommandButton Command2 
-      Caption         =   "清除全部数据"
-      Height          =   360
-      Left            =   2280
-      TabIndex        =   4
-      Top             =   3240
-      Width           =   1590
    End
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   360
-      Left            =   720
+      Left            =   1320
       TabIndex        =   3
       Top             =   3240
-      Width           =   990
+      Width           =   1335
    End
    Begin VB.Frame Frame1 
       Caption         =   "数据"
       Height          =   2415
       Left            =   960
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   360
       Width           =   2535
    End
@@ -125,7 +117,7 @@ Begin VB.Form frmSJuxing
       Caption         =   "单位"
       Height          =   2415
       Left            =   3600
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   360
       Width           =   1455
    End
@@ -192,18 +184,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim a As Double
-Dim b As Double
-Dim c As Double
-Dim d As Double
-Dim e As Double
-Dim f As Double
-Dim g As Double
-Dim h As Double
-Dim k As String
-Dim L As String
-Dim m As String
-
 Private Sub Combo2_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo3.SetFocus
@@ -235,6 +215,17 @@ Private Sub Combo6_KeyPress(KeyAscii As Integer)
 End Sub
 
 Sub Command1_Click()
+    Dim a As Double
+    Dim b As Double
+    Dim c As Double
+    Dim d As Double
+    Dim e As Double
+    Dim f As Double
+    Dim g As Double
+    Dim h As Double
+    Dim k As String
+    Dim L As String
+    Dim m As String
     k = Combo1.Text
     L = Combo2.Text
     m = Combo3.Text
@@ -334,7 +325,11 @@ End Sub
 Private Sub Form_Load()
     Combo1.Text = "cm"
     Combo2.Text = "cm"
-    Combo3.Text = "cm"
+    Combo3.Text = titlemianjidanwei
+    If lang = "英文" Then
+        Command1.Caption = langjisuanen
+        Command2.Caption = langfuweien
+    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

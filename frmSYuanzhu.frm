@@ -20,111 +20,72 @@ Begin VB.Form frmSYuanzhu
    ScaleHeight     =   3780
    ScaleWidth      =   6060
    StartUpPosition =   3  '窗口缺省
-   Begin VB.ComboBox Combo1 
-      Height          =   315
-      Index           =   1
-      ItemData        =   "frmSYuanzhu.frx":0000
-      Left            =   4200
-      List            =   "frmSYuanzhu.frx":0010
-      TabIndex        =   15
-      Top             =   480
-      Width           =   1095
-   End
    Begin VB.ComboBox Combo3 
       Height          =   315
-      Index           =   1
-      ItemData        =   "frmSYuanzhu.frx":0024
-      Left            =   4200
-      List            =   "frmSYuanzhu.frx":0034
-      TabIndex        =   14
+      Left            =   4440
+      Style           =   2  'Dropdown List
+      TabIndex        =   12
       Top             =   2160
-      Width           =   1095
+      Width           =   975
    End
    Begin VB.ComboBox Combo2 
       Height          =   315
-      Index           =   1
-      ItemData        =   "frmSYuanzhu.frx":005E
-      Left            =   4200
-      List            =   "frmSYuanzhu.frx":006E
-      TabIndex        =   13
+      Left            =   4440
+      Style           =   2  'Dropdown List
+      TabIndex        =   11
       Top             =   1320
-      Width           =   1095
+      Width           =   975
    End
    Begin VB.Frame Frame2 
       Caption         =   "单位"
-      Height          =   2415
-      Left            =   4080
-      TabIndex        =   9
+      Height          =   2535
+      Left            =   4200
+      TabIndex        =   6
       Top             =   240
       Width           =   1455
+      Begin VB.ComboBox Combo1 
+         Height          =   315
+         Left            =   240
+         Style           =   2  'Dropdown List
+         TabIndex        =   10
+         Top             =   240
+         Width           =   975
+      End
    End
    Begin VB.Frame Frame1 
       Caption         =   "数据"
       Height          =   2415
       Left            =   1440
-      TabIndex        =   5
+      TabIndex        =   2
       Top             =   240
       Width           =   2535
       Begin VB.ComboBox Combo6 
          Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":0082
+         ItemData        =   "frmSYuanzhu.frx":0000
          Left            =   120
-         List            =   "frmSYuanzhu.frx":0084
-         TabIndex        =   8
+         List            =   "frmSYuanzhu.frx":0002
+         TabIndex        =   5
          Top             =   1920
          Width           =   2295
       End
       Begin VB.ComboBox Combo5 
          Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":0086
+         ItemData        =   "frmSYuanzhu.frx":0004
          Left            =   120
-         List            =   "frmSYuanzhu.frx":0088
-         TabIndex        =   7
+         List            =   "frmSYuanzhu.frx":0006
+         TabIndex        =   4
          Top             =   1080
          Width           =   2295
       End
       Begin VB.ComboBox Combo4 
          Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":008A
+         ItemData        =   "frmSYuanzhu.frx":0008
          Left            =   120
-         List            =   "frmSYuanzhu.frx":008C
-         TabIndex        =   6
+         List            =   "frmSYuanzhu.frx":000A
+         TabIndex        =   3
          Top             =   240
          Width           =   2295
       End
-   End
-   Begin VB.ComboBox Combo1 
-      Height          =   315
-      Index           =   0
-      ItemData        =   "frmSYuanzhu.frx":008E
-      Left            =   4200
-      List            =   "frmSYuanzhu.frx":009E
-      Style           =   2  'Dropdown List
-      TabIndex        =   4
-      Top             =   480
-      Width           =   1095
-   End
-   Begin VB.ComboBox Combo3 
-      Height          =   315
-      Index           =   0
-      ItemData        =   "frmSYuanzhu.frx":00B2
-      Left            =   4200
-      List            =   "frmSYuanzhu.frx":00C2
-      Style           =   2  'Dropdown List
-      TabIndex        =   3
-      Top             =   2160
-      Width           =   1095
-   End
-   Begin VB.ComboBox Combo2 
-      Height          =   315
-      Index           =   0
-      ItemData        =   "frmSYuanzhu.frx":00EC
-      Left            =   4200
-      List            =   "frmSYuanzhu.frx":00FC
-      Style           =   2  'Dropdown List
-      TabIndex        =   2
-      Top             =   1320
-      Width           =   1095
    End
    Begin VB.CommandButton Command2 
       Caption         =   "清空数据"
@@ -157,7 +118,7 @@ Begin VB.Form frmSYuanzhu
       EndProperty
       Height          =   240
       Left            =   480
-      TabIndex        =   12
+      TabIndex        =   9
       Top             =   1320
       Width           =   255
    End
@@ -176,7 +137,7 @@ Begin VB.Form frmSYuanzhu
       EndProperty
       Height          =   240
       Left            =   360
-      TabIndex        =   11
+      TabIndex        =   8
       Top             =   480
       Width           =   765
    End
@@ -195,7 +156,7 @@ Begin VB.Form frmSYuanzhu
       EndProperty
       Height          =   240
       Left            =   360
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   2160
       Width           =   510
    End
@@ -206,3 +167,10 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
+Private Sub Form_Load()
+    If lang = "英文" Then
+        Command1.Caption = langjisuanen
+        Command2.Caption = langfuweien
+    End If
+    Combo1.Text = titlemianjidanwei
+End Sub

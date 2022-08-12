@@ -14,10 +14,10 @@ Begin VB.Form frmSSanjiaoxing2
    Begin VB.Frame Frame3 
       Caption         =   "结果"
       Height          =   855
-      Left            =   2520
+      Left            =   2640
       TabIndex        =   15
       Top             =   2880
-      Width           =   1815
+      Width           =   1695
       Begin VB.ComboBox Combo8 
          Height          =   300
          Left            =   240
@@ -198,28 +198,102 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Command1_Click()
-Dim a As String
-Dim b As String
-Dim c As String
-Dim d As String
+    Dim a As String
+    Dim b As String
+    Dim c As String
+    Dim d As String
 
-Dim e As Double
-Dim f As Double
+    Dim e As Double
+    Dim f As Double
 
-Dim g As Double
-Dim h As Double
+    Dim g As Double
+    Dim h As Double
 
-Dim i As Double
-Dim j As Double
+    Dim i As Double
+    Dim j As Double
 
-Dim k As Double
-Dim l As Double
+    Dim k As Double
+    Dim L As Double
+    Dim z As Double
 
+    a = Combo1.Text
+    b = Combo2.Text
+    c = Combo3.Text
+    d = Combo4.Text
 
+    e = Val(Combo5.Text)
+    g = Val(Combo6.Text)
+    i = Val(Combo7.Text)
+    k = Val(Combo8.Text)
+
+    If a = "mm" Then
+        f = MMtoKM(e)
+    ElseIf a = "cm" Then
+        f = CMtoKM(e)
+    ElseIf a = "dm" Then
+        f = DMtoKM(e)
+    ElseIf a = "m" Then
+        f = MtoKM(e)
+    ElseIf a = "km" Then
+        f = e
+    Else
+        MsgBox ("单位暂不支持")
+    End If
+    If b = "mm" Then
+        h = MMtoKM(g)
+    ElseIf b = "cm" Then
+        h = CMtoKM(g)
+    ElseIf b = "dm" Then
+        h = DMtoKM(g)
+    ElseIf b = "m" Then
+        h = MtoKM(g)
+    ElseIf b = "km" Then
+        h = g
+    Else
+        MsgBox ("单位暂不支持")
+    End If
+    If c = "mm" Then
+        j = MMtoKM(i)
+    ElseIf c = "cm" Then
+        j = CMtoKM(i)
+    ElseIf c = "dm" Then
+        j = DMtoKM(i)
+    ElseIf c = "m" Then
+        j = MtoKM(i)
+    ElseIf c = "km" Then
+        j = i
+    Else
+        MsgBox ("单位暂不支持")
+    End If
+    Dim p As Double
+    p = (f + h + j) / 2
+    z = (p * (p - f) * (p - h) * (p - j))
+      k = Sqr(Val(z))
+    If d = "平方毫米" Then
+        L = PFKMtoPFMM(k)
+    ElseIf d = "平方厘米" Then
+        L = PFKMtoPFCM(k)
+    ElseIf d = "平方分米" Then
+        L = PFKMtoPFDM(k)
+    ElseIf d = "平方米" Then
+        L = PFKMtoPFM(k)
+    ElseIf d = "km" Then
+        L = k
+    Else
+        MsgBox ("单位暂不支持")
+    End If
+        Combo8.Text = Str(L)
+    Combo5.AddItem Combo5.Text
+    Combo6.AddItem Combo6.Text
 End Sub
 
 Private Sub Form_Load()
-    Combo1.Text = "平方厘米"
+    Combo1.Text = "cm"
     Combo2.Text = "cm"
-    Combo3.Text = "立方厘米"
+    Combo3.Text = "cm"
+    Combo4.Text = titlemianjidanwei
+    If lang = "英文" Then
+        Command1.Caption = langjisuanen
+        Command2.Caption = langfuweien
+    End If
 End Sub

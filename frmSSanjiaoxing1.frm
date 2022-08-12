@@ -308,7 +308,11 @@ End Sub
 Private Sub Form_Load()
     Combo1.Text = "cm"
     Combo2.Text = "cm"
-    Combo3.Text = "cm"
+    Combo3.Text = titlemianjidanwei
+    If lang = "с╒нд" Then
+        Command1.Caption = langjisuanen
+        Command2.Caption = langfuweien
+    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

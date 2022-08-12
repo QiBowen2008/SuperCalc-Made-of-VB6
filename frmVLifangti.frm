@@ -24,37 +24,37 @@ Begin VB.Form frmVLifangti
    Begin VB.Frame Frame2 
       Caption         =   "Êý¾Ý"
       Height          =   3375
-      Left            =   1440
+      Left            =   1560
       TabIndex        =   11
       Top             =   360
       Width           =   2175
+      Begin VB.ComboBox Combo5 
+         Height          =   315
+         Left            =   480
+         Style           =   2  'Dropdown List
+         TabIndex        =   15
+         Top             =   360
+         Width           =   1095
+      End
       Begin VB.ComboBox Combo8 
          Height          =   315
          Left            =   360
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   2760
          Width           =   1335
       End
       Begin VB.ComboBox Combo7 
          Height          =   315
          Left            =   360
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   1800
          Width           =   1335
       End
       Begin VB.ComboBox Combo6 
          Height          =   315
          Left            =   360
-         TabIndex        =   13
-         Top             =   1080
-         Width           =   1335
-      End
-      Begin VB.ComboBox Combo5 
-         Height          =   315
-         Index           =   0
-         Left            =   360
          TabIndex        =   12
-         Top             =   360
+         Top             =   1080
          Width           =   1335
       End
    End
@@ -200,3 +200,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Command1_Click()
+    Combo5.AddItem Combo5.Text
+    Combo6.AddItem Combo6.Text
+End Sub
+

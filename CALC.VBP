@@ -9,19 +9,20 @@ Form=CJuxing.frm
 Form=frmAbout.frm
 Form=frmVLifangti.frm
 Module=Module1; Module1.bas
-Form=Help.frm
 Form=frmSPingxingsibianxing1.frm
 Form=frmNjiecheng.frm
 Form=frmBingliandianlu.frm
 Form=Frm_Scientific.frm
 Form=frmSYuanzhu.frm
-Object=Word.Document.12; wps.exe
 Form=frmBMI.frm
+Form=frmYaqiang.frm
+Form=frmSet.frm
+Form=frmFuli.frm
 IconForm="frmCalc"
-Startup="frmCalc"
+Startup="Sub Main"
 HelpFile=""
 Title="CALC"
-ExeName32="CALC4.exe"
+ExeName32="SuperCalc.exe"
 Path32="C:\"
 Command32=""
 Name="È«ÄÜ¼ÆËãÆ÷"
@@ -53,3 +54,13 @@ DebugStartupOption=0
 
 [CodeSMART]
 Task_UID=14_05_22_15_10_14
+
+[fastBuild]
+fullPath=C:\CALC4.exe
+
+[iCode_Windows]
+LastBuildFile=C:\SuperCalc.exe
+LastComponentFile=C:\SuperCalc.exe
+
+[Rubberduck]
+ProjectId=c350dfea-bb3a-4647-b634-34128151b141

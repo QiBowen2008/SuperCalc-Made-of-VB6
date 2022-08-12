@@ -118,3 +118,9 @@ Private Sub Command1_Click()
     nk = f(n)
     Text2.Text = Str(nk)
 End Sub
+
+Private Sub Form_Load()
+    If lang = "с╒нд" Then
+    Command1.Caption = "Calculation"
+    End If
+End Sub

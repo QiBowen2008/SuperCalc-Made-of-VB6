@@ -418,6 +418,10 @@ Private Sub Cmd_Backspace_Click()    '退格
     End If
 End Sub
 
+Private Sub Cmd_Backspace_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 39 Then Cmd_CE.SetFocus
+End Sub
+
 Private Sub Cmd_C_Click()     '清零
     Txt_Result.Text = "0"
     prev = 0
@@ -534,12 +538,10 @@ Private Sub Cmd_sqrt_Click()   '求平方根
         Txt_Result.Text = "函数输入无效。"
     End If
 End Sub
-
 Private Sub Cmd_Square_Click()   '求平方
     Txt_Result.Text = Val(Txt_Result.Text) ^ 2
     prev = Txt_Result.Text
 End Sub
-
 Private Sub Cmd_Tan_Click()    'Tan函数
     If (Cos(Val(Txt_Result.Text))) <> 0 Then
         Txt_Result.Text = Str(Sin(ang * Val(Txt_Result.Text)) / Cos(ang * Val(Txt_Result.Text)))

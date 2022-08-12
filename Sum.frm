@@ -134,7 +134,7 @@ Begin VB.Form frmSum
          Strikethrough   =   0   'False
       EndProperty
       Height          =   240
-      Left            =   3000
+      Left            =   2880
       TabIndex        =   7
       Top             =   1680
       Width           =   2160
@@ -177,14 +177,14 @@ Attribute VB_Exposed = False
 Dim d(1 To 500) As Double
 Dim nc As Integer
 Private Sub cmdCommand1_Click()
-    Dim SUM As Double
+    Dim Sum As Double
     Dim i As Integer
-    SUM = 0
+    Sum = 0
     For i = 1 To nc
-        SUM = SUM + d(i)
+        Sum = Sum + d(i)
     Next i
     If nc > 0 Then
-        Text3.Text = Str(SUM / nc)
+        Text3.Text = Str(Sum / nc)
     Else
         Text3.Text = Str(0)
     End If

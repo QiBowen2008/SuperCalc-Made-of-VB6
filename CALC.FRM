@@ -1,14 +1,15 @@
 VERSION 5.00
 Begin VB.Form frmCalc 
    Appearance      =   0  'Flat
-   BackColor       =   &H80000005&
+   BackColor       =   &H00C0FFFF&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "全能计算器"
-   ClientHeight    =   2955
+   ClientHeight    =   3285
    ClientLeft      =   3120
    ClientTop       =   2340
    ClientWidth     =   3285
    ClipControls    =   0   'False
+   FillColor       =   &H80000000&
    BeginProperty Font 
       Name            =   "System"
       Size            =   12
@@ -18,17 +19,26 @@ Begin VB.Form frmCalc
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
-   ForeColor       =   &H80000008&
+   ForeColor       =   &H80000004&
    Icon            =   "CALC.frx":0000
    LinkMode        =   1  'Source
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   2955
+   ScaleHeight     =   3285
    ScaleWidth      =   3285
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "7"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   7
       Left            =   120
@@ -39,6 +49,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "8"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   8
       Left            =   720
@@ -49,6 +68,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "9"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   9
       Left            =   1320
@@ -59,6 +87,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Cancel 
       Appearance      =   0  'Flat
       Caption         =   "C"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Left            =   2040
       TabIndex        =   10
@@ -68,6 +105,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton CancelEntry 
       Appearance      =   0  'Flat
       Caption         =   "CE"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Left            =   2640
       TabIndex        =   11
@@ -77,6 +123,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "4"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   4
       Left            =   120
@@ -87,6 +142,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "5"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   5
       Left            =   720
@@ -97,6 +161,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "6"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   6
       Left            =   1320
@@ -107,6 +180,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Operator 
       Appearance      =   0  'Flat
       Caption         =   "+"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   1
       Left            =   2040
@@ -117,6 +199,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Operator 
       Appearance      =   0  'Flat
       Caption         =   "-"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   3
       Left            =   2640
@@ -127,6 +218,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "1"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   1
       Left            =   120
@@ -137,6 +237,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "2"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   2
       Left            =   720
@@ -147,6 +256,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "3"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   3
       Left            =   1320
@@ -157,6 +275,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Operator 
       Appearance      =   0  'Flat
       Caption         =   "X"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   2
       Left            =   2040
@@ -167,6 +294,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Operator 
       Appearance      =   0  'Flat
       Caption         =   "/"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   0
       Left            =   2640
@@ -177,6 +313,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Number 
       Appearance      =   0  'Flat
       Caption         =   "0"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   0
       Left            =   120
@@ -187,6 +332,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Decimal 
       Appearance      =   0  'Flat
       Caption         =   "."
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Left            =   1320
       TabIndex        =   18
@@ -196,6 +350,15 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Operator 
       Appearance      =   0  'Flat
       Caption         =   "="
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Index           =   4
       Left            =   2040
@@ -206,11 +369,39 @@ Begin VB.Form frmCalc
    Begin VB.CommandButton Percent 
       Appearance      =   0  'Flat
       Caption         =   "%"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   480
       Left            =   2640
       TabIndex        =   17
       Top             =   2400
       Width           =   480
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "功能尚不完整，1.0版敬请期待"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   180
+      Left            =   480
+      TabIndex        =   20
+      Top             =   3000
+      Width           =   2430
    End
    Begin VB.Label Readout 
       Alignment       =   1  'Right Justify
@@ -315,8 +506,20 @@ Begin VB.Form frmCalc
          End
       End
    End
-   Begin VB.Menu About 
-      Caption         =   "关于"
+   Begin VB.Menu ShenghuoCalc 
+      Caption         =   "生活计算"
+      Begin VB.Menu BMI 
+         Caption         =   "BMI计算"
+      End
+   End
+   Begin VB.Menu Setup 
+      Caption         =   "选项"
+      Begin VB.Menu Set 
+         Caption         =   "设置"
+      End
+      Begin VB.Menu About 
+         Caption         =   "关于"
+      End
    End
 End
 Attribute VB_Name = "frmCalc"
@@ -325,6 +528,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
+Private Declare Sub InitCommonControls Lib "comctl32.dll" ()
 Option Explicit
 Dim Op1, Op2
 Dim DecimalFlag As Integer
@@ -339,6 +543,10 @@ End Sub
 
 Private Sub Bingliandianzu_Click()
     frmBingliandianlu.Show
+End Sub
+
+Private Sub BMI_Click()
+    frmBMI.Show
 End Sub
 
 Private Sub Cancel_Click()
@@ -363,17 +571,19 @@ Private Sub Decimal_Click()
     LastInput = "NUMS"
 End Sub
 
+Private Sub Form_Initialize()
+    InitCommonControls
+End Sub
+
 Private Sub Form_Load()
     DecimalFlag = False
     NumOps = 0
     LastInput = "NONE"
     OpFlag = " "
+
 End Sub
-
-
-
 Private Sub Gougudingli_Click()
-    frmGougudingli1.Show
+    frmGougudingli.Show
 End Sub
 
 Private Sub Juxingmj_Click()
@@ -461,18 +671,17 @@ Private Sub S3biansanjiaoxing_Click()
 End Sub
 
 Private Sub SCI_Click()
-    Frm_Scientific.Show
+    frmScientific.Show
 End Sub
 
+
+Private Sub Set_Click()
+    frmSet.Show
+End Sub
 
 Private Sub Shssanjiaoxing_Click()
     frmSSanjiaoxing1.Show
 End Sub
-
-
-
-
-
 Private Sub SPingxingsibianxing_Click()
     frmSPingxingsibianxing1.Show
 End Sub

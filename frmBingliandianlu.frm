@@ -20,21 +20,21 @@ Begin VB.Form frmBingliandianlu
    ScaleHeight     =   3555
    ScaleWidth      =   6300
    StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton Command2 
-      Caption         =   "清空"
+   Begin VB.CommandButton Command1 
+      Caption         =   "计算"
       Height          =   480
-      Left            =   4560
+      Left            =   3000
       TabIndex        =   7
       Top             =   2520
       Width           =   990
    End
-   Begin VB.CommandButton Command1 
-      Caption         =   "计算"
+   Begin VB.CommandButton Command2 
+      Caption         =   "清空"
       Height          =   480
-      Left            =   3240
+      Left            =   4560
       TabIndex        =   6
       Top             =   2520
-      Width           =   975
+      Width           =   990
    End
    Begin VB.ComboBox Combo1 
       Height          =   315
@@ -134,7 +134,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim rs As Double
 
-Private Sub combo1_KeyPress(KeyAscii As Integer)
+Private Sub Combo1_KeyPress(KeyAscii As Integer)
     Dim r As Double
     If KeyAscii = 13 Then
         r = Val(Combo1.Text)

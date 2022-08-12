@@ -9,11 +9,27 @@ Begin VB.Form frmCJuxing
    ScaleHeight     =   3915
    ScaleWidth      =   5160
    StartUpPosition =   3  '窗口缺省
+   Begin VB.CommandButton Command2 
+      Caption         =   "复位"
+      Height          =   360
+      Left            =   3240
+      TabIndex        =   13
+      Top             =   2760
+      Width           =   990
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "计算"
+      Height          =   360
+      Left            =   1200
+      TabIndex        =   12
+      Top             =   2760
+      Width           =   990
+   End
    Begin VB.Frame Frame2 
       Caption         =   "单位"
       Height          =   2175
       Left            =   3360
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   360
       Width           =   1575
       Begin VB.ComboBox Combo1 
@@ -21,7 +37,7 @@ Begin VB.Form frmCJuxing
          ItemData        =   "CJuxing.frx":0000
          Left            =   240
          List            =   "CJuxing.frx":0013
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   240
          Width           =   1095
       End
@@ -30,7 +46,7 @@ Begin VB.Form frmCJuxing
          ItemData        =   "CJuxing.frx":002B
          Left            =   240
          List            =   "CJuxing.frx":003E
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   840
          Width           =   1095
       End
@@ -39,7 +55,7 @@ Begin VB.Form frmCJuxing
          ItemData        =   "CJuxing.frx":0056
          Left            =   240
          List            =   "CJuxing.frx":0069
-         TabIndex        =   11
+         TabIndex        =   9
          Top             =   1440
          Width           =   1095
       End
@@ -48,14 +64,14 @@ Begin VB.Form frmCJuxing
       Caption         =   "数据"
       Height          =   2175
       Left            =   840
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   360
       Width           =   2175
       Begin VB.ComboBox Combo4 
          Height          =   300
          Left            =   360
          Style           =   2  'Dropdown List
-         TabIndex        =   6
+         TabIndex        =   4
          Top             =   240
          Width           =   1455
       End
@@ -63,7 +79,7 @@ Begin VB.Form frmCJuxing
          Height          =   300
          Left            =   360
          Style           =   2  'Dropdown List
-         TabIndex        =   5
+         TabIndex        =   3
          Top             =   840
          Width           =   1455
       End
@@ -71,26 +87,10 @@ Begin VB.Form frmCJuxing
          Height          =   300
          Left            =   360
          Style           =   2  'Dropdown List
-         TabIndex        =   4
+         TabIndex        =   2
          Top             =   1440
          Width           =   1455
       End
-   End
-   Begin VB.CommandButton Command2 
-      Caption         =   "清除数据"
-      Height          =   360
-      Left            =   3120
-      TabIndex        =   2
-      Top             =   2640
-      Width           =   990
-   End
-   Begin VB.CommandButton Command1 
-      Caption         =   "求值"
-      Height          =   360
-      Left            =   1200
-      TabIndex        =   0
-      Top             =   2640
-      Width           =   990
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -107,7 +107,7 @@ Begin VB.Form frmCJuxing
       EndProperty
       Height          =   240
       Left            =   240
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   600
       Width           =   255
    End
@@ -126,7 +126,7 @@ Begin VB.Form frmCJuxing
       EndProperty
       Height          =   240
       Left            =   240
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   1200
       Width           =   255
    End
@@ -145,7 +145,7 @@ Begin VB.Form frmCJuxing
       EndProperty
       Height          =   240
       Left            =   120
-      TabIndex        =   7
+      TabIndex        =   5
       Top             =   1800
       Width           =   855
    End
@@ -155,7 +155,7 @@ Begin VB.Form frmCJuxing
       Caption         =   "提示：如果是正方形，只需要在“长”中输入边长即可"
       Height          =   180
       Left            =   480
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   3240
       Width           =   4320
    End
@@ -305,9 +305,14 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Form_Load()
-    Combo1.Text = "cm"
-    Combo2.Text = "cm"
-    Combo3.Text = "cm"
+    
+    '读取INI文件中指定的节和节/键
+    '节的名称：AppName
+    '键名称：Title
+    
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = 1
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)
