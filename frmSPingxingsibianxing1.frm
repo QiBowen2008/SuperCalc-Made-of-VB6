@@ -1,10 +1,12 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSPingxingsibianxing1 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知底和高求平行四边形面积"
    ClientHeight    =   4065
-   ClientLeft      =   45
-   ClientTop       =   330
+   ClientLeft      =   3465
+   ClientTop       =   7170
    ClientWidth     =   5445
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -20,10 +22,16 @@ Begin VB.Form frmSPingxingsibianxing1
    ScaleHeight     =   4065
    ScaleWidth      =   5445
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   480
+      Top             =   2760
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "清空数据"
       Height          =   360
-      Left            =   2880
+      Left            =   3360
       TabIndex        =   7
       Top             =   3240
       Width           =   990
@@ -34,7 +42,7 @@ Begin VB.Form frmSPingxingsibianxing1
       Left            =   960
       TabIndex        =   6
       Top             =   3240
-      Width           =   990
+      Width           =   1455
    End
    Begin VB.ComboBox Combo6 
       Height          =   315
@@ -67,25 +75,25 @@ Begin VB.Form frmSPingxingsibianxing1
       Height          =   315
       ItemData        =   "frmSPingxingsibianxing1.frx":000C
       Left            =   4080
-      List            =   "frmSPingxingsibianxing1.frx":001C
+      List            =   "frmSPingxingsibianxing1.frx":001F
       TabIndex        =   2
       Top             =   2280
       Width           =   1095
    End
    Begin VB.ComboBox Combo2 
       Height          =   315
-      ItemData        =   "frmSPingxingsibianxing1.frx":0046
+      ItemData        =   "frmSPingxingsibianxing1.frx":0040
       Left            =   4080
-      List            =   "frmSPingxingsibianxing1.frx":0059
+      List            =   "frmSPingxingsibianxing1.frx":0053
       TabIndex        =   1
       Top             =   1440
       Width           =   1095
    End
    Begin VB.ComboBox Combo1 
       Height          =   315
-      ItemData        =   "frmSPingxingsibianxing1.frx":0071
+      ItemData        =   "frmSPingxingsibianxing1.frx":006B
       Left            =   4080
-      List            =   "frmSPingxingsibianxing1.frx":0084
+      List            =   "frmSPingxingsibianxing1.frx":007E
       TabIndex        =   0
       Top             =   600
       Width           =   1095
@@ -169,18 +177,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim a As Double
-Dim b As Double
-Dim c As Double
-Dim d As Double
-Dim e As Double
-Dim f As Double
-Dim g As Double
-Dim h As Double
-Dim k As String
-Dim L As String
-Dim m As String
-
 Private Sub Combo2_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo3.SetFocus
@@ -212,6 +208,17 @@ Private Sub Combo6_KeyPress(KeyAscii As Integer)
 End Sub
 
 Sub Command1_Click()
+    Dim a As Double
+    Dim b As Double
+    Dim c As Double
+    Dim d As Double
+    Dim e As Double
+    Dim f As Double
+    Dim g As Double
+    Dim h As Double
+    Dim k As String
+    Dim L As String
+    Dim m As String
     k = Combo1.Text
     L = Combo2.Text
     m = Combo3.Text
@@ -224,7 +231,7 @@ Sub Command1_Click()
         b = DMtoKM(a)
     ElseIf k = "mm" Then
         b = MMtoKM(a)
-    ElseIf k = "m" Then
+    ElseIf k = "m " Then
         b = MtoKM(a)
     ElseIf k = "km" Then
         b = a
@@ -235,20 +242,20 @@ Sub Command1_Click()
         d = DMtoKM(c)
     ElseIf L = "mm" Then
         d = MMtoKM(c)
-    ElseIf L = "m" Then
+    ElseIf L = "m " Then
         d = MtoKM(c)
     ElseIf L = "km" Then
         d = c
     End If
-    If m = "平方厘米" Then
+    If m = "cm^2" Then
         f = PFCMtoPFKM(e)
-    ElseIf m = "平方分米" Then
+    ElseIf m = "dm^2" Then
         f = PFKMtoPFDM(e)
-    ElseIf m = "平方毫米" Then
+    ElseIf m = "mm^2" Then
         f = PFMMtoPFKM(e)
-    ElseIf m = "平方米" Then
+    ElseIf m = "m^2" Then
         f = PFMtoPFKM(e)
-    ElseIf m = "平方千米" Then
+    ElseIf m = "km^2" Then
         f = e
     End If
     If Combo4.Text = "" Then
@@ -259,7 +266,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf k = "mm" Then
             h = KMtoMM(g)
-        ElseIf k = "m" Then
+        ElseIf k = "m " Then
             h = KMtoM(g)
         ElseIf k = "km" Then
             h = g
@@ -273,7 +280,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf L = "mm" Then
             h = KMtoMM(g)
-        ElseIf L = "m" Then
+        ElseIf L = "m " Then
             h = KMtoM(g)
         ElseIf L = "km" Then
             h = g
@@ -281,15 +288,15 @@ Sub Command1_Click()
         Combo5.Text = h
     ElseIf Combo6.Text = "" Then
         g = b * d
-        If m = "平方厘米" Then
+        If m = "cm^2" Then
             h = PFKMtoPFCM(g)
-        ElseIf m = "平方分米" Then
+        ElseIf m = "dm^2" Then
             h = PFKMtoPFDM(g)
-        ElseIf m = "平方毫米" Then
+        ElseIf m = "mm^2" Then
             h = PFKMtoPFMM(g)
-        ElseIf m = "平方米" Then
+        ElseIf m = "m^2" Then
             h = PFKMtoPFM(g)
-        ElseIf m = "平方千米" Then
+        ElseIf m = "km^2" Then
             h = g
         End If
         Combo6.Text = h
@@ -303,18 +310,21 @@ Private Sub Command2_Click()
     Combo4.Text = ""
     Combo5.Text = ""
     Combo6.Text = ""
-    Combo1.Text = ""
-    Combo2.Text = ""
-    Combo3.Text = ""
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlemianjidanwei
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
 End Sub
 
 Private Sub Form_Load()
-    Combo1.Text = "cm"
-    Combo2.Text = "cm"
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
     Combo3.Text = titlemianjidanwei
-    If lang = "英文" Then
-        Command1.Caption = langjisuanen
-        Command2.Caption = langfuweien
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then
+        Me.Caption = "Find the area of the rectangle"
     End If
 End Sub
 

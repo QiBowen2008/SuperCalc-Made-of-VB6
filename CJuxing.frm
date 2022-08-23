@@ -1,19 +1,27 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmCJuxing 
+   BackColor       =   &H00F2DED5&
    Caption         =   "求矩形周长"
-   ClientHeight    =   3915
-   ClientLeft      =   105
-   ClientTop       =   450
+   ClientHeight    =   3690
+   ClientLeft      =   3735
+   ClientTop       =   8040
    ClientWidth     =   5160
    LinkTopic       =   "Form1"
-   ScaleHeight     =   3915
+   ScaleHeight     =   3690
    ScaleWidth      =   5160
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   3240
+      Top             =   3240
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
       Left            =   3240
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   2760
       Width           =   990
    End
@@ -21,15 +29,15 @@ Begin VB.Form frmCJuxing
       Caption         =   "计算"
       Height          =   360
       Left            =   1200
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   2760
-      Width           =   990
+      Width           =   1215
    End
    Begin VB.Frame Frame2 
       Caption         =   "单位"
       Height          =   2175
       Left            =   3360
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   360
       Width           =   1575
       Begin VB.ComboBox Combo1 
@@ -37,7 +45,7 @@ Begin VB.Form frmCJuxing
          ItemData        =   "CJuxing.frx":0000
          Left            =   240
          List            =   "CJuxing.frx":0013
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   240
          Width           =   1095
       End
@@ -46,7 +54,7 @@ Begin VB.Form frmCJuxing
          ItemData        =   "CJuxing.frx":002B
          Left            =   240
          List            =   "CJuxing.frx":003E
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   840
          Width           =   1095
       End
@@ -55,7 +63,7 @@ Begin VB.Form frmCJuxing
          ItemData        =   "CJuxing.frx":0056
          Left            =   240
          List            =   "CJuxing.frx":0069
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   1440
          Width           =   1095
       End
@@ -64,30 +72,27 @@ Begin VB.Form frmCJuxing
       Caption         =   "数据"
       Height          =   2175
       Left            =   840
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   360
       Width           =   2175
       Begin VB.ComboBox Combo4 
          Height          =   300
          Left            =   360
-         Style           =   2  'Dropdown List
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   240
          Width           =   1455
       End
       Begin VB.ComboBox Combo5 
          Height          =   300
          Left            =   360
-         Style           =   2  'Dropdown List
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   840
          Width           =   1455
       End
       Begin VB.ComboBox Combo6 
          Height          =   300
          Left            =   360
-         Style           =   2  'Dropdown List
-         TabIndex        =   2
+         TabIndex        =   1
          Top             =   1440
          Width           =   1455
       End
@@ -107,7 +112,7 @@ Begin VB.Form frmCJuxing
       EndProperty
       Height          =   240
       Left            =   240
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   600
       Width           =   255
    End
@@ -126,7 +131,7 @@ Begin VB.Form frmCJuxing
       EndProperty
       Height          =   240
       Left            =   240
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   1200
       Width           =   255
    End
@@ -145,19 +150,9 @@ Begin VB.Form frmCJuxing
       EndProperty
       Height          =   240
       Left            =   120
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   1800
       Width           =   855
-   End
-   Begin VB.Label Label4 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "提示：如果是正方形，只需要在“长”中输入边长即可"
-      Height          =   180
-      Left            =   480
-      TabIndex        =   0
-      Top             =   3240
-      Width           =   4320
    End
 End
 Attribute VB_Name = "frmCJuxing"
@@ -220,7 +215,7 @@ Sub Command1_Click()
         b = DMtoKM(a)
     ElseIf k = "mm" Then
         b = MMtoKM(a)
-    ElseIf k = "m" Then
+    ElseIf k = "m " Then
         b = MtoKM(a)
     ElseIf k = "km" Then
         b = a
@@ -231,7 +226,7 @@ Sub Command1_Click()
         d = DMtoKM(c)
     ElseIf L = "mm" Then
         d = MMtoKM(c)
-    ElseIf L = "m" Then
+    ElseIf L = "m " Then
         d = MtoKM(c)
     ElseIf L = "km" Then
         d = c
@@ -242,7 +237,7 @@ Sub Command1_Click()
         f = KMtoDM(e)
     ElseIf m = "mm" Then
         f = MMtoKM(e)
-    ElseIf m = "m" Then
+    ElseIf m = "m " Then
         f = MtoKM(e)
     ElseIf m = "km" Then
         f = e
@@ -255,7 +250,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf k = "mm" Then
             h = KMtoMM(g)
-        ElseIf k = "m" Then
+        ElseIf k = "m " Then
             h = KMtoM(g)
         ElseIf k = "km" Then
             h = g
@@ -269,7 +264,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf L = "mm" Then
             h = KMtoMM(g)
-        ElseIf L = "m" Then
+        ElseIf L = "m " Then
             h = KMtoM(g)
         ElseIf L = "km" Then
             h = g
@@ -283,7 +278,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf m = "mm" Then
             h = KMtoMM(g)
-        ElseIf m = "m" Then
+        ElseIf m = "m " Then
             h = KMtoM(g)
         ElseIf m = "km" Then
             h = g
@@ -296,23 +291,22 @@ Sub Command1_Click()
 End Sub
 
 Private Sub Command2_Click()
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlechangdudanwei
     Combo4.Text = ""
     Combo5.Text = ""
     Combo6.Text = ""
-    Combo1.Text = ""
-    Combo2.Text = ""
-    Combo3.Text = ""
 End Sub
 
 Private Sub Form_Load()
-    
-    '读取INI文件中指定的节和节/键
-    '节的名称：AppName
-    '键名称：Title
-    
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
     Combo1.Text = titlechangdudanwei
     Combo2.Text = titlechangdudanwei
-    Combo3.Text = 1
+    Combo3.Text = titlechangdudanwei
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

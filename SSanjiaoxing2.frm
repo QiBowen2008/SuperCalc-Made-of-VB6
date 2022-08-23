@@ -1,16 +1,24 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSSanjiaoxing2 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知三角形三边求面积"
    ClientHeight    =   4635
-   ClientLeft      =   30
-   ClientTop       =   375
+   ClientLeft      =   2730
+   ClientTop       =   5775
    ClientWidth     =   6555
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   4635
    ScaleWidth      =   6555
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   5760
+      Top             =   3960
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.Frame Frame3 
       Caption         =   "结果"
       Height          =   855
@@ -52,18 +60,18 @@ Begin VB.Form frmSSanjiaoxing2
    End
    Begin VB.ComboBox Combo3 
       Height          =   300
-      ItemData        =   "SSanjiaoxing2.frx":0047
+      ItemData        =   "SSanjiaoxing2.frx":0034
       Left            =   4680
-      List            =   "SSanjiaoxing2.frx":005A
+      List            =   "SSanjiaoxing2.frx":0047
       TabIndex        =   9
       Top             =   2280
       Width           =   1335
    End
    Begin VB.ComboBox Combo2 
       Height          =   300
-      ItemData        =   "SSanjiaoxing2.frx":0071
+      ItemData        =   "SSanjiaoxing2.frx":005F
       Left            =   4680
-      List            =   "SSanjiaoxing2.frx":0084
+      List            =   "SSanjiaoxing2.frx":0072
       TabIndex        =   8
       Top             =   1560
       Width           =   1335
@@ -77,9 +85,9 @@ Begin VB.Form frmSSanjiaoxing2
       Width           =   1695
       Begin VB.ComboBox Combo1 
          Height          =   300
-         ItemData        =   "SSanjiaoxing2.frx":009B
+         ItemData        =   "SSanjiaoxing2.frx":008A
          Left            =   120
-         List            =   "SSanjiaoxing2.frx":00AE
+         List            =   "SSanjiaoxing2.frx":009D
          TabIndex        =   7
          Top             =   360
          Width           =   1335
@@ -110,10 +118,10 @@ Begin VB.Form frmSSanjiaoxing2
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   360
-      Left            =   1560
+      Left            =   1320
       TabIndex        =   3
       Top             =   3960
-      Width           =   990
+      Width           =   1230
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
@@ -232,7 +240,7 @@ Private Sub Command1_Click()
         f = CMtoKM(e)
     ElseIf a = "dm" Then
         f = DMtoKM(e)
-    ElseIf a = "m" Then
+    ElseIf a = "m " Then
         f = MtoKM(e)
     ElseIf a = "km" Then
         f = e
@@ -245,7 +253,7 @@ Private Sub Command1_Click()
         h = CMtoKM(g)
     ElseIf b = "dm" Then
         h = DMtoKM(g)
-    ElseIf b = "m" Then
+    ElseIf b = "m " Then
         h = MtoKM(g)
     ElseIf b = "km" Then
         h = g
@@ -258,7 +266,7 @@ Private Sub Command1_Click()
         j = CMtoKM(i)
     ElseIf c = "dm" Then
         j = DMtoKM(i)
-    ElseIf c = "m" Then
+    ElseIf c = "m " Then
         j = MtoKM(i)
     ElseIf c = "km" Then
         j = i
@@ -268,32 +276,65 @@ Private Sub Command1_Click()
     Dim p As Double
     p = (f + h + j) / 2
     z = (p * (p - f) * (p - h) * (p - j))
-      k = Sqr(Val(z))
-    If d = "平方毫米" Then
+    k = Sqr(Val(z))
+    If d = "mm^2" Then
         L = PFKMtoPFMM(k)
-    ElseIf d = "平方厘米" Then
+    ElseIf d = "cm^2" Then
         L = PFKMtoPFCM(k)
-    ElseIf d = "平方分米" Then
+    ElseIf d = "dm^2" Then
         L = PFKMtoPFDM(k)
-    ElseIf d = "平方米" Then
+    ElseIf d = "m^2" Then
         L = PFKMtoPFM(k)
     ElseIf d = "km" Then
         L = k
     Else
         MsgBox ("单位暂不支持")
     End If
-        Combo8.Text = Str(L)
+    Combo8.Text = Str(L)
     Combo5.AddItem Combo5.Text
     Combo6.AddItem Combo6.Text
 End Sub
 
-Private Sub Form_Load()
-    Combo1.Text = "cm"
-    Combo2.Text = "cm"
-    Combo3.Text = "cm"
+Private Sub Command2_Click()
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlechangdudanwei
     Combo4.Text = titlemianjidanwei
-    If lang = "英文" Then
-        Command1.Caption = langjisuanen
-        Command2.Caption = langfuweien
+    Combo5.Text = ""
+    Combo6.Text = ""
+    Combo7.Text = ""
+    Combo8.Text = ""
+End Sub
+
+Private Sub Form_Load()
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlechangdudanwei
+    Combo4.Text = titlemianjidanwei
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then
+        Me.Caption = "Find the area of a triangle given three sides"
     End If
+End Sub
+Private Sub combo1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Combo2.SetFocus
+End Sub
+Private Sub Combo2_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Combo3.SetFocus
+End Sub
+Private Sub Combo3_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Combo4.SetFocus
+End Sub
+Private Sub Combo5_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Combo6.SetFocus
+End Sub
+Private Sub Combo6_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Combo7.SetFocus
+End Sub
+Private Sub Combo7_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Combo8.SetFocus
+End Sub
+Private Sub Combo8_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1.SetFocus
 End Sub

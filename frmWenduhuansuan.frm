@@ -1,9 +1,12 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmWenduhuansuan 
+   BackColor       =   &H00F2DED5&
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "温度换算"
    ClientHeight    =   3195
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientLeft      =   3645
+   ClientTop       =   7530
    ClientWidth     =   4680
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -15,31 +18,45 @@ Begin VB.Form frmWenduhuansuan
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
    ScaleHeight     =   3195
    ScaleWidth      =   4680
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton Command1 
-      Caption         =   "求值"
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   2040
+      Top             =   2160
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
+   Begin VB.CommandButton Command2 
+      Caption         =   "复位"
       Height          =   360
-      Left            =   1680
-      TabIndex        =   4
+      Left            =   2880
+      TabIndex        =   5
       Top             =   2520
       Width           =   990
    End
-   Begin VB.TextBox Text2 
-      Height          =   495
-      Left            =   1800
-      TabIndex        =   2
-      Top             =   1440
-      Width           =   2055
+   Begin VB.ComboBox Combo2 
+      Height          =   315
+      Left            =   2040
+      TabIndex        =   4
+      Top             =   1560
+      Width           =   1935
    End
-   Begin VB.TextBox Text1 
-      Height          =   495
-      Left            =   1800
-      TabIndex        =   1
-      Top             =   480
-      Width           =   2055
+   Begin VB.ComboBox Combo1 
+      Height          =   315
+      Left            =   2040
+      TabIndex        =   3
+      Top             =   600
+      Width           =   1935
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "求值"
+      Height          =   360
+      Left            =   840
+      TabIndex        =   2
+      Top             =   2520
+      Width           =   990
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
@@ -56,7 +73,7 @@ Begin VB.Form frmWenduhuansuan
       EndProperty
       Height          =   285
       Left            =   480
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   1560
       Width           =   765
    End
@@ -87,16 +104,39 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim f As Double
 Dim c As Double
+
+Private Sub combo1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        If Combo1.Text = "" Then
+            Combo2.SetFocus
+        Else
+            Command1.SetFocus
+        End If
+    End If
+End Sub
+
 Private Sub Command1_Click()
-    If Text1.Text = "" Then
-        f = Val(Text2.Text)
+    If Combo1.Text = "" Then
+        f = Val(Combo2.Text)
         c = (5 * f + 160) / 9
-        Text1.Text = c
-    ElseIf Text2.Text = "" Then
-        c = Val(Text1.Text)
+        Combo1.Text = c
+    ElseIf Combo2.Text = "" Then
+        c = Val(Combo1.Text)
         f = 9 * c / 5 + 32
-        Text2.Text = f
+        Combo2.Text = f
     Else
         MsgBox "您输入的数据错误！"
     End If
+    Combo1.AddItem Combo1.Text
+    Combo2.AddItem Combo2.Text
+End Sub
+
+Private Sub Command2_Click()
+    Combo1.Text = ""
+    Combo2.Text = ""
+End Sub
+Private Sub Form_Load()
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then Me.Caption = "CtoF"
 End Sub

@@ -1,22 +1,30 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSJuxing 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求矩形面积"
    ClientHeight    =   3975
-   ClientLeft      =   30
-   ClientTop       =   390
-   ClientWidth     =   6390
+   ClientLeft      =   5430
+   ClientTop       =   11190
+   ClientWidth     =   5745
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   3975
-   ScaleWidth      =   6390
+   ScaleWidth      =   5745
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona2 
+      Left            =   5040
+      Top             =   2880
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.ComboBox Combo2 
       Height          =   300
       ItemData        =   "SJuxing.frx":0000
       Left            =   3720
       List            =   "SJuxing.frx":0013
-      TabIndex        =   13
+      TabIndex        =   10
       Top             =   1440
       Width           =   1095
    End
@@ -25,7 +33,7 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":002B
       Left            =   1080
       List            =   "SJuxing.frx":002D
-      TabIndex        =   12
+      TabIndex        =   9
       Top             =   2280
       Width           =   2295
    End
@@ -34,7 +42,7 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":002F
       Left            =   1080
       List            =   "SJuxing.frx":0031
-      TabIndex        =   11
+      TabIndex        =   8
       Top             =   1440
       Width           =   2295
    End
@@ -43,40 +51,16 @@ Begin VB.Form frmSJuxing
       ItemData        =   "SJuxing.frx":0033
       Left            =   1080
       List            =   "SJuxing.frx":0035
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   600
       Width           =   2295
    End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
-      Left            =   4200
-      TabIndex        =   9
-      Top             =   3240
-      Width           =   990
-   End
-   Begin VB.CommandButton Command5 
-      Caption         =   "清除数据"
-      Height          =   360
-      Left            =   5160
-      TabIndex        =   8
-      Top             =   2280
-      Width           =   990
-   End
-   Begin VB.CommandButton Command4 
-      Caption         =   "清除数据"
-      Height          =   360
-      Left            =   5160
-      TabIndex        =   7
-      Top             =   1440
-      Width           =   990
-   End
-   Begin VB.CommandButton Command3 
-      Caption         =   "清除数据"
-      Height          =   360
-      Left            =   5160
+      Left            =   3720
       TabIndex        =   6
-      Top             =   600
+      Top             =   3240
       Width           =   990
    End
    Begin VB.ComboBox Combo3 
@@ -90,9 +74,9 @@ Begin VB.Form frmSJuxing
    End
    Begin VB.ComboBox Combo1 
       Height          =   300
-      ItemData        =   "SJuxing.frx":007E
+      ItemData        =   "SJuxing.frx":006B
       Left            =   3720
-      List            =   "SJuxing.frx":0091
+      List            =   "SJuxing.frx":007E
       TabIndex        =   4
       Top             =   600
       Width           =   1095
@@ -109,7 +93,7 @@ Begin VB.Form frmSJuxing
       Caption         =   "数据"
       Height          =   2415
       Left            =   960
-      TabIndex        =   14
+      TabIndex        =   11
       Top             =   360
       Width           =   2535
    End
@@ -117,7 +101,7 @@ Begin VB.Form frmSJuxing
       Caption         =   "单位"
       Height          =   2415
       Left            =   3600
-      TabIndex        =   15
+      TabIndex        =   12
       Top             =   360
       Width           =   1455
    End
@@ -238,7 +222,7 @@ Sub Command1_Click()
         b = DMtoKM(a)
     ElseIf k = "mm" Then
         b = MMtoKM(a)
-    ElseIf k = "m" Then
+    ElseIf k = "m " Then
         b = MtoKM(a)
     ElseIf k = "km" Then
         b = a
@@ -249,20 +233,20 @@ Sub Command1_Click()
         d = DMtoKM(c)
     ElseIf L = "mm" Then
         d = MMtoKM(c)
-    ElseIf L = "m" Then
+    ElseIf L = "m " Then
         d = MtoKM(c)
     ElseIf L = "km" Then
         d = c
     End If
-    If m = "平方厘米" Then
+    If m = "cm^2" Then
         f = PFCMtoPFKM(e)
-    ElseIf m = "平方分米" Then
+    ElseIf m = "dm^2" Then
         f = PFKMtoPFDM(e)
-    ElseIf m = "平方毫米" Then
+    ElseIf m = "mm^2" Then
         f = PFMMtoPFKM(e)
-    ElseIf m = "平方米" Then
+    ElseIf m = "m^2" Then
         f = PFMtoPFKM(e)
-    ElseIf m = "平方千米" Then
+    ElseIf m = "km^2" Then
         f = e
     End If
     If Combo4.Text = "" Then
@@ -273,7 +257,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf k = "mm" Then
             h = KMtoMM(g)
-        ElseIf k = "m" Then
+        ElseIf k = "m " Then
             h = KMtoM(g)
         ElseIf k = "km" Then
             h = g
@@ -287,7 +271,7 @@ Sub Command1_Click()
             h = KMtoDM(g)
         ElseIf L = "mm" Then
             h = KMtoMM(g)
-        ElseIf L = "m" Then
+        ElseIf L = "m " Then
             h = KMtoM(g)
         ElseIf L = "km" Then
             h = g
@@ -295,15 +279,15 @@ Sub Command1_Click()
         Combo5.Text = h
     ElseIf Combo6.Text = "" Then
         g = b * d
-        If m = "平方厘米" Then
+        If m = "cm^2" Then
             h = PFKMtoPFCM(g)
-        ElseIf m = "平方分米" Then
+        ElseIf m = "dm^2" Then
             h = PFKMtoPFDM(g)
-        ElseIf m = "平方毫米" Then
+        ElseIf m = "mm^2" Then
             h = PFKMtoPFMM(g)
-        ElseIf m = "平方米" Then
+        ElseIf m = "m^2" Then
             h = PFKMtoPFM(g)
-        ElseIf m = "平方千米" Then
+        ElseIf m = "km^2" Then
             h = g
         End If
         Combo6.Text = h
@@ -317,18 +301,21 @@ Private Sub Command2_Click()
     Combo4.Text = ""
     Combo5.Text = ""
     Combo6.Text = ""
-    Combo1.Text = ""
-    Combo2.Text = ""
-    Combo3.Text = ""
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlemianjidanwei
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
 End Sub
 
 Private Sub Form_Load()
-    Combo1.Text = "cm"
-    Combo2.Text = "cm"
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
     Combo3.Text = titlemianjidanwei
-    If lang = "英文" Then
-        Command1.Caption = langjisuanen
-        Command2.Caption = langfuweien
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then
+        Me.Caption = "Find the area of the rectangle"
     End If
 End Sub
 

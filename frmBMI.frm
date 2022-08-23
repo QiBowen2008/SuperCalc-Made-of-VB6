@@ -1,10 +1,12 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmBMI 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "BMI计算"
    ClientHeight    =   3825
-   ClientLeft      =   45
-   ClientTop       =   330
+   ClientLeft      =   3825
+   ClientTop       =   7890
    ClientWidth     =   6930
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -20,7 +22,7 @@ Begin VB.Form frmBMI
    ScaleHeight     =   3825
    ScaleWidth      =   6930
    StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton Command1 
+   Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
       Left            =   4080
@@ -28,13 +30,13 @@ Begin VB.Form frmBMI
       Top             =   3120
       Width           =   990
    End
-   Begin VB.CommandButton pushbutton1 
+   Begin VB.CommandButton Command1 
       Caption         =   "计算"
       Height          =   360
       Left            =   1680
       TabIndex        =   16
       Top             =   3120
-      Width           =   990
+      Width           =   1215
    End
    Begin VB.ComboBox Combo5 
       Height          =   315
@@ -58,9 +60,9 @@ Begin VB.Form frmBMI
    End
    Begin VB.ComboBox Combo3 
       Height          =   315
-      ItemData        =   "frmBMI.frx":0117
+      ItemData        =   "frmBMI.frx":011E
       Left            =   3960
-      List            =   "frmBMI.frx":0121
+      List            =   "frmBMI.frx":0128
       TabIndex        =   10
       Top             =   360
       Width           =   1215
@@ -78,6 +80,12 @@ Begin VB.Form frmBMI
       TabIndex        =   4
       Top             =   360
       Width           =   1335
+   End
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   6360
+      Top             =   2400
+      _ExtentX        =   4763
+      _ExtentY        =   3466
    End
    Begin VB.Label Label11 
       AutoSize        =   -1  'True
@@ -296,22 +304,22 @@ Private Sub Combo4_KeyPress(KeyAscii As Integer)
 End Sub
 Private Sub Combo5_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        pushbutton1.SetFocus
+        Command1.SetFocus
     End If
 End Sub
 
-Private Sub Command1_Click()
-    Combo1.Text = "175"
-    Combo2.Text = ""
+Private Sub Command2_Click()
     Combo3.Text = "cm"
-    Combo4.Text = ""
-    Combo5.Text = ""
+    Combo1.Text = "175"
+    Combo4.Text = "成年"
+    Command2.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
     Label4.Caption = ""
     Label6.Caption = ""
     Label8.Caption = ""
 End Sub
 
-Private Sub Pushbutton1_Click()
+Private Sub Command1_Click()
     Dim height As Single
     Dim weight As Single
     Dim BMI As Single
@@ -326,7 +334,7 @@ Private Sub Pushbutton1_Click()
     weight = Val(Combo2.Text)
     If Combo3.Text = "cm" Then
         h = height / 100
-    ElseIf Combo3.Text = "m" Then
+    ElseIf Combo3.Text = "m " Then
         h = height
     End If
     BMI = weight / h ^ 2
@@ -465,126 +473,126 @@ Private Sub Pushbutton1_Click()
         End If
     ElseIf xingbie = "女" Then
         Select Case age
-            Case Is = 3
-                jzbz = 15.4
-                czbz = 16.9
-                fpbz = 18.3
-            Case Is = 3.5
-                jzbz = 15.3
-                czbz = 16.8
-                fpbz = 18.2
-            Case Is = 4
-                jzbz = 15.2
-                czbz = 16.7
-                fpbz = 18.1
-            Case Is = 4.5
-                jzbz = 15.1
-                czbz = 16.6
-                fpbz = 18.2
-            Case Is = 5
-                jzbz = 15
-                czbz = 16.6
-                fpbz = 18.2
-            Case Is = 5.5
-                jzbz = 15
-                czbz = 16.7
-                fpbz = 18.3
-            Case Is = 6
-                jzbz = 15
-                czbz = 16.7
-                fpbz = 18.4
-            Case Is = 6.5
-                jzbz = 15
-                czbz = 16.8
-                fpbz = 18.6
-            Case Is = 7
-                jzbz = 15
-                czbz = 16.9
-                fpbz = 18.8
-            Case Is = 7.5
-                jzbz = 15.1
-                czbz = 17.1
-                fpbz = 19.1
-            Case Is = 8
-                jzbz = 15.2
-                czbz = 17.3
-                fpbz = 19.5
-            Case Is = 8.5
-                jzbz = 15.4
-                czbz = 17.6
-                fpbz = 19.9
-            Case Is = 9
-                jzbz = 15.6
-                czbz = 17.9
-                fpbz = 20.4
-            Case Is = 9.5
-                jzbz = 15.8
-                czbz = 18.3
-                fpbz = 20.9
-            Case Is = 10
-                jzbz = 16.1
-                czbz = 18.7
-                fpbz = 21.5
-            Case Is = 10.5
-                jzbz = 16.4
-                czbz = 19.1
-                fpbz = 22.1
-            Case Is = 11
-                jzbz = 16.7
-                czbz = 19.8
-                fpbz = 22.7
-            Case Is = 11.5
-                jzbz = 17.1
-                czbz = 20.1
-                fpbz = 23.3
-            Case Is = 12
-                jzbz = 17.4
-                czbz = 20.5
-                fpbz = 23.9
-            Case Is = 12.5
-                jzbz = 17.8
-                czbz = 21
-                fpbz = 24.4
-            Case Is = 13
-                jzbz = 18.1
-                czbz = 21.4
-                fpbz = 25
-            Case Is = 13.5
-                jzbz = 18.5
-                czbz = 21.8
-                fpbz = 25.5
-            Case Is = 14
-                jzbz = 18.8
-                czbz = 22.2
-                fpbz = 25.9
-            Case Is = 14.5
-                jzbz = 19.1
-                czbz = 22.5
-                fpbz = 26.3
-            Case Is = 15
-                jzbz = 19.3
-                czbz = 22.8
-                fpbz = 26.7
-            Case Is = 15.5
-                jzbz = 19.5
-                czbz = 23.1
-                fpbz = 27
-            Case Is = 16
-                jzbz = 19.7
-                czbz = 23.3
-                fpbz = 27.2
-            Case Is = 16.5
-                jzbz = 19.9
-                czbz = 23.5
-                fpbz = 27.4
-            Case Is = 17
-                jzbz = 20
-                czbz = 23.7
-                fpbz = 27.6
-            Case Is = 18
-                jzbz = 20.3
-                czbz = 24
-                fpbz = 28
+        Case Is = 3
+            jzbz = 15.4
+            czbz = 16.9
+            fpbz = 18.3
+        Case Is = 3.5
+            jzbz = 15.3
+            czbz = 16.8
+            fpbz = 18.2
+        Case Is = 4
+            jzbz = 15.2
+            czbz = 16.7
+            fpbz = 18.1
+        Case Is = 4.5
+            jzbz = 15.1
+            czbz = 16.6
+            fpbz = 18.2
+        Case Is = 5
+            jzbz = 15
+            czbz = 16.6
+            fpbz = 18.2
+        Case Is = 5.5
+            jzbz = 15
+            czbz = 16.7
+            fpbz = 18.3
+        Case Is = 6
+            jzbz = 15
+            czbz = 16.7
+            fpbz = 18.4
+        Case Is = 6.5
+            jzbz = 15
+            czbz = 16.8
+            fpbz = 18.6
+        Case Is = 7
+            jzbz = 15
+            czbz = 16.9
+            fpbz = 18.8
+        Case Is = 7.5
+            jzbz = 15.1
+            czbz = 17.1
+            fpbz = 19.1
+        Case Is = 8
+            jzbz = 15.2
+            czbz = 17.3
+            fpbz = 19.5
+        Case Is = 8.5
+            jzbz = 15.4
+            czbz = 17.6
+            fpbz = 19.9
+        Case Is = 9
+            jzbz = 15.6
+            czbz = 17.9
+            fpbz = 20.4
+        Case Is = 9.5
+            jzbz = 15.8
+            czbz = 18.3
+            fpbz = 20.9
+        Case Is = 10
+            jzbz = 16.1
+            czbz = 18.7
+            fpbz = 21.5
+        Case Is = 10.5
+            jzbz = 16.4
+            czbz = 19.1
+            fpbz = 22.1
+        Case Is = 11
+            jzbz = 16.7
+            czbz = 19.8
+            fpbz = 22.7
+        Case Is = 11.5
+            jzbz = 17.1
+            czbz = 20.1
+            fpbz = 23.3
+        Case Is = 12
+            jzbz = 17.4
+            czbz = 20.5
+            fpbz = 23.9
+        Case Is = 12.5
+            jzbz = 17.8
+            czbz = 21
+            fpbz = 24.4
+        Case Is = 13
+            jzbz = 18.1
+            czbz = 21.4
+            fpbz = 25
+        Case Is = 13.5
+            jzbz = 18.5
+            czbz = 21.8
+            fpbz = 25.5
+        Case Is = 14
+            jzbz = 18.8
+            czbz = 22.2
+            fpbz = 25.9
+        Case Is = 14.5
+            jzbz = 19.1
+            czbz = 22.5
+            fpbz = 26.3
+        Case Is = 15
+            jzbz = 19.3
+            czbz = 22.8
+            fpbz = 26.7
+        Case Is = 15.5
+            jzbz = 19.5
+            czbz = 23.1
+            fpbz = 27
+        Case Is = 16
+            jzbz = 19.7
+            czbz = 23.3
+            fpbz = 27.2
+        Case Is = 16.5
+            jzbz = 19.9
+            czbz = 23.5
+            fpbz = 27.4
+        Case Is = 17
+            jzbz = 20
+            czbz = 23.7
+            fpbz = 27.6
+        Case Is = 18
+            jzbz = 20.3
+            czbz = 24
+            fpbz = 28
         End Select
     End If
     psbz = jzbz - 2
@@ -592,25 +600,43 @@ Private Sub Pushbutton1_Click()
         Label8.Caption = "偏瘦"
         Label6.Caption = "不挑食，多吃饭"
     ElseIf psbz <= BMI And BMI < czbz Then
-        Label8.Caption = "正常"
-        Label6.Caption = "保持好的生活方式"
+        If language = "英文" Then
+            Label8.Caption = "OK"
+            Label6.Caption = "Keep good life habits"
+        Else
+            Label8.Caption = "正常"
+            Label6.Caption = "保持好的生活方式"
+        End If
     ElseIf czbz <= BMI And BMI < fpbz Then
-        Label8.Caption = "超重"
-        Label6.Caption = "多运动，合理营养"
+        If language = "英文" Then
+            Label8.Caption = "Overweight"
+            Label6.Caption = "Do more sports and have a good eating habit"
+        Else
+            Label8.Caption = "超重"
+            Label6.Caption = "多运动，合理营养"
+        End If
     ElseIf fpbz <= BMI Then
-        Label8.Caption = "肥胖"
-        Label6.Caption = "快减肥吧"
-    End If
-    Combo1.AddItem height
-    Combo2.AddItem weight
+        If language = "英文" Then
+            Label8.Caption = "Fat"
+            Label6.Caption = "Please lose your weight"
+        Else
+            Label8.Caption = "肥胖"
+            Label6.Caption = "快减肥吧"
+        End If
+        End If
+        Combo1.AddItem height
+        Combo2.AddItem weight
 End Sub
 
 Private Sub Form_Load()
+    Label1.Caption = lblhigh
     Combo3.Text = "cm"
     Combo1.Text = "175"
     Combo4.Text = "成年"
-    If lang = "英文" Then
-        pushbutton1.Caption = "calculation"
+    Command2.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then
+        Me.Caption = "BMI calculation"
     End If
 End Sub
 

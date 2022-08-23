@@ -1,16 +1,24 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmGougudingli 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知两直角边求斜边"
    ClientHeight    =   3990
-   ClientLeft      =   45
-   ClientTop       =   330
-   ClientWidth     =   6600
+   ClientLeft      =   3285
+   ClientTop       =   6810
+   ClientWidth     =   6510
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   3990
-   ScaleWidth      =   6600
+   ScaleWidth      =   6510
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   480
+      Top             =   3120
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.Frame Frame1 
       Caption         =   "数据"
       Height          =   2895
@@ -70,7 +78,7 @@ Begin VB.Form frmGougudingli
    Begin VB.CommandButton Command2 
       Caption         =   "清除数据"
       Height          =   375
-      Left            =   4320
+      Left            =   4200
       TabIndex        =   4
       Top             =   3240
       Width           =   1215
@@ -78,10 +86,10 @@ Begin VB.Form frmGougudingli
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   375
-      Left            =   1680
+      Left            =   1200
       TabIndex        =   0
       Top             =   3240
-      Width           =   975
+      Width           =   1455
    End
    Begin VB.Frame Frame2 
       Caption         =   "单位"
@@ -154,9 +162,156 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Form_Load()
-    If lang = "英文" Then
-        Command1.Caption = langjisuanen
-        Command2.Caption = langfuweien
+Private Sub Combo2_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Combo3.SetFocus
     End If
 End Sub
+
+Private Sub Combo3_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Command1.SetFocus
+    End If
+End Sub
+
+Private Sub Combo4_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Combo5.SetFocus
+    End If
+End Sub
+
+Private Sub Combo5_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Combo6.SetFocus
+    End If
+End Sub
+
+Private Sub Combo6_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Command1.SetFocus
+    End If
+End Sub
+
+Sub Command1_Click()
+    Dim a As Double
+    Dim b As Double
+    Dim c As Double
+    Dim d As Double
+    Dim e As Double
+    Dim f As Double
+    Dim g As Double
+    Dim h As Double
+    Dim k As String
+    Dim L As String
+    Dim m As String
+    k = Combo1.Text
+    L = Combo2.Text
+    m = Combo3.Text
+    a = Val(Combo4.Text)
+    c = Val(Combo5.Text)
+    e = Val(Combo6.Text)
+    If k = "cm" Then
+        b = CMtoKM(a)
+    ElseIf k = "dm" Then
+        b = DMtoKM(a)
+    ElseIf k = "mm" Then
+        b = MMtoKM(a)
+    ElseIf k = "m " Then
+        b = MtoKM(a)
+    ElseIf k = "km" Then
+        b = a
+    End If
+    If L = "cm" Then
+        d = CMtoKM(c)
+    ElseIf L = "dm" Then
+        d = DMtoKM(c)
+    ElseIf L = "mm" Then
+        d = MMtoKM(c)
+    ElseIf L = "m " Then
+        d = MtoKM(c)
+    ElseIf L = "km" Then
+        d = c
+    End If
+    If m = "cm" Then
+        f = CMtoKM(e)
+    ElseIf m = "dm" Then
+        f = KMtoDM(e)
+    ElseIf m = "mm" Then
+        f = MMtoKM(e)
+    ElseIf m = "dm" Then
+        f = MtoKM(e)
+    ElseIf m = "km" Then
+        f = e
+    End If
+    If Combo4.Text = "" Then
+        g = Sqr(f ^ 2 - d ^ 2)
+        If k = "cm" Then
+            h = KMtoCM(g)
+        ElseIf k = "dm" Then
+            h = KMtoDM(g)
+        ElseIf k = "mm" Then
+            h = KMtoMM(g)
+        ElseIf k = "m " Then
+            h = KMtoM(g)
+        ElseIf k = "km" Then
+            h = g
+        End If
+    Combo4.Text = h
+    ElseIf Combo5.Text = "" Then
+        g = Sqr(f ^ 2 - b ^ 2)
+        If L = "cm" Then
+            h = KMtoCM(g)
+        ElseIf L = "dm" Then
+            h = KMtoDM(g)
+        ElseIf L = "mm" Then
+            h = KMtoMM(g)
+        ElseIf L = "m " Then
+            h = KMtoM(g)
+        ElseIf L = "km" Then
+            h = g
+        End If
+        Combo5.Text = h
+    ElseIf Combo6.Text = "" Then
+        g = Sqr(b ^ 2 + d ^ 2)
+        If m = "cm" Then
+            h = KMtoCM(g)
+        ElseIf m = "dm" Then
+            h = KMtoDM(g)
+        ElseIf m = "mm^2" Then
+            h = KMtoMM(g)
+        ElseIf m = "m^2" Then
+            h = KMtoM(g)
+        ElseIf m = "km^2" Then
+            h = g
+        End If
+        Combo6.Text = h
+    End If
+    Combo4.AddItem Combo4.Text
+    Combo5.AddItem Combo5.Text
+    Combo6.AddItem Combo6.Text
+End Sub
+Private Sub Command2_Click()
+    Combo4.Text = ""
+    Combo5.Text = ""
+    Combo6.Text = ""
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlemianjidanwei
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+End Sub
+Private Sub Form_Load()
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+    Combo3.Text = titlechangdudanwei
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then Me.Caption = "Pythagorean theorem"
+End Sub
+Private Sub Combo1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        Combo2.SetFocus
+    End If
+End Sub
+
+

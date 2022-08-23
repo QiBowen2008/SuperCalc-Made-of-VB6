@@ -1,22 +1,46 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSum 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "平均值"
    ClientHeight    =   4980
-   ClientLeft      =   30
-   ClientTop       =   375
+   ClientLeft      =   1650
+   ClientTop       =   3615
    ClientWidth     =   6330
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   4980
    ScaleWidth      =   6330
    StartUpPosition =   3  '窗口缺省
-   Begin VB.CommandButton Command1 
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   240
+      Top             =   1800
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
+   Begin VB.TextBox Text4 
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   10.5
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   4560
+      TabIndex        =   12
+      Top             =   2880
+      Width           =   1335
+   End
+   Begin VB.CommandButton Command2 
       Caption         =   "重置数据"
       Height          =   480
       Left            =   4560
       TabIndex        =   10
-      Top             =   3360
+      Top             =   3600
       Width           =   1215
    End
    Begin VB.TextBox Text3 
@@ -32,7 +56,7 @@ Begin VB.Form frmSum
       Height          =   375
       Left            =   4560
       TabIndex        =   6
-      Top             =   2400
+      Top             =   2160
       Width           =   1335
    End
    Begin VB.TextBox Text2 
@@ -48,7 +72,7 @@ Begin VB.Form frmSum
       Height          =   375
       Left            =   4560
       TabIndex        =   5
-      Top             =   1680
+      Top             =   1440
       Width           =   1335
    End
    Begin VB.TextBox Text1 
@@ -64,15 +88,15 @@ Begin VB.Form frmSum
       Height          =   375
       Left            =   4560
       TabIndex        =   4
-      Top             =   960
+      Top             =   720
       Width           =   1335
    End
-   Begin VB.CommandButton cmdCommand1 
+   Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   480
       Left            =   2760
       TabIndex        =   2
-      Top             =   3360
+      Top             =   3600
       Width           =   1215
    End
    Begin VB.ListBox List1 
@@ -81,6 +105,25 @@ Begin VB.Form frmSum
       TabIndex        =   0
       Top             =   600
       Width           =   1935
+   End
+   Begin VB.Label Label5 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "总值"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   240
+      Left            =   3000
+      TabIndex        =   11
+      Top             =   2880
+      Width           =   960
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
@@ -117,7 +160,7 @@ Begin VB.Form frmSum
       Height          =   240
       Left            =   3000
       TabIndex        =   8
-      Top             =   2520
+      Top             =   2280
       Width           =   960
    End
    Begin VB.Label Label2 
@@ -136,7 +179,7 @@ Begin VB.Form frmSum
       Height          =   240
       Left            =   2880
       TabIndex        =   7
-      Top             =   1680
+      Top             =   1440
       Width           =   2160
    End
    Begin VB.Label Label1 
@@ -155,7 +198,7 @@ Begin VB.Form frmSum
       Height          =   240
       Left            =   3000
       TabIndex        =   3
-      Top             =   960
+      Top             =   720
       Width           =   960
    End
    Begin VB.Label lblLabel1 
@@ -176,7 +219,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim d(1 To 500) As Double
 Dim nc As Integer
-Private Sub cmdCommand1_Click()
+Private Sub Command1_Click()
     Dim Sum As Double
     Dim i As Integer
     Sum = 0
@@ -188,14 +231,23 @@ Private Sub cmdCommand1_Click()
     Else
         Text3.Text = Str(0)
     End If
+    Text4.Text = Sum
 End Sub
 
-Private Sub Command1_Click()
+Private Sub Command2_Click()
     Text1.Text = ""
     Text2.Text = ""
     Text3.Text = ""
     List1.Clear
     nc = 0
+End Sub
+
+Private Sub Form_Load()
+    Command2.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then
+        Me.Caption = "Averaging"
+    End If
 End Sub
 
 Private Sub Text1_KeyPress(KeyAscii As Integer)

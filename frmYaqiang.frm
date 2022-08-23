@@ -1,9 +1,11 @@
 VERSION 5.00
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmYaqiang 
+   BackColor       =   &H00F2DED5&
    Caption         =   "压强与浮力"
    ClientHeight    =   4260
-   ClientLeft      =   60
-   ClientTop       =   345
+   ClientLeft      =   3525
+   ClientTop       =   7590
    ClientWidth     =   6330
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -19,6 +21,12 @@ Begin VB.Form frmYaqiang
    ScaleWidth      =   6330
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   5160
+      Top             =   3600
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
@@ -33,7 +41,7 @@ Begin VB.Form frmYaqiang
       Left            =   1440
       TabIndex        =   10
       Top             =   3480
-      Width           =   990
+      Width           =   1335
    End
    Begin VB.ComboBox Combo6 
       Height          =   315
@@ -64,7 +72,6 @@ Begin VB.Form frmYaqiang
       Left            =   3960
       List            =   "frmYaqiang.frx":0014
       TabIndex        =   5
-      Text            =   "平方厘米"
       Top             =   1680
       Width           =   1455
    End
@@ -75,24 +82,15 @@ Begin VB.Form frmYaqiang
       TabIndex        =   1
       Top             =   360
       Width           =   1815
-      Begin VB.Label Label4 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "N（牛）"
-         BeginProperty Font 
-            Name            =   "宋体"
-            Size            =   14.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   480
+      Begin VB.ComboBox Combo1 
+         Height          =   315
+         ItemData        =   "frmYaqiang.frx":002F
+         Left            =   240
+         List            =   "frmYaqiang.frx":0039
+         Style           =   2  'Dropdown List
          TabIndex        =   12
          Top             =   240
-         Width           =   1065
+         Width           =   1455
       End
    End
    Begin VB.Frame Frame1 
@@ -222,13 +220,18 @@ Sub Command1_Click()
     c = Val(Combo5.Text)
     e = Val(Combo6.Text)
     b = a
-    If L = "平方厘米" Then
+    If k = "N " Then
+        b = a
+    ElseIf k = "kN" Then
+        b = KNtoN(a)
+    End If
+    If L = "cm^2" Then
         d = PFCMtoPFM(c)
-    ElseIf L = "平方分米" Then
+    ElseIf L = "dm^2" Then
         d = PFDMtoPFM(c)
-    ElseIf L = "平方毫米" Then
+    ElseIf L = "mm^2" Then
         d = PFMMtoPFM(c)
-    ElseIf L = "平方米" Then
+    ElseIf L = "m^2" Then
         d = c
     End If
     If m = "KPa" Then
@@ -239,22 +242,27 @@ Sub Command1_Click()
         f = e
     End If
     If Combo4.Text = "" Then
-        h = f / d
+        g = f * d
+        If k = "N " Then
+            h = g
+        ElseIf k = "kN" Then
+            h = NtoKN(g)
+        End If
     Combo4.Text = h
     ElseIf Combo5.Text = "" Then
-        g = f / b
-        If L = "平方厘米" Then
+        g = b / f
+        If L = "cm^2" Then
             h = PFMtoPFCM(g)
-        ElseIf L = "平方分米" Then
+        ElseIf L = "dm^2" Then
             h = PFMtoPFDM(g)
-        ElseIf L = "平方毫米" Then
+        ElseIf L = "mm^2" Then
             h = PFMtoPFMM(g)
-        ElseIf L = "平方米" Then
+        ElseIf L = "m^2" Then
             h = g
         End If
         Combo5.Text = h
     ElseIf Combo6.Text = "" Then
-        g = b * d
+        g = b / d
         If m = "MPa" Then
             h = PatoMPa(g)
         ElseIf m = "KPa" Then
@@ -282,10 +290,12 @@ Private Sub combo1_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
+    Combo1.Text = "N "
     Combo2.Text = titlemianjidanwei
     Combo3.Text = titleyaqiangdanwei
-    If lang = "英文" Then
-        Command1.Caption = langjisuanen
-        Command2.Caption = langfuweien
+    Command1.Caption = cmdcalccap
+    Command2.Caption = cmdrstcap
+    If language = "英文" Then
+        Me.Caption = "Pressure and pressure"
     End If
 End Sub

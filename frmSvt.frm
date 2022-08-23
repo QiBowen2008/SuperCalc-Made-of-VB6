@@ -1,11 +1,12 @@
 VERSION 5.00
-Begin VB.Form frmSTixing1 
-   BorderStyle     =   1  'Fixed Single
-   Caption         =   "已知中位线长度和高求梯形面积"
-   ClientHeight    =   4065
-   ClientLeft      =   45
-   ClientTop       =   330
-   ClientWidth     =   6360
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
+Begin VB.Form frmSvt 
+   BackColor       =   &H00F2DED5&
+   Caption         =   "速度，时间与路程的关系"
+   ClientHeight    =   3735
+   ClientLeft      =   3690
+   ClientTop       =   7935
+   ClientWidth     =   6030
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -15,104 +16,110 @@ Begin VB.Form frmSTixing1
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
-   LinkTopic       =   "Form2"
-   MaxButton       =   0   'False
-   ScaleHeight     =   4065
-   ScaleWidth      =   6360
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   3735
+   ScaleWidth      =   6030
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  '窗口缺省
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   5640
+      Top             =   2640
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   360
-      Left            =   1320
+      Left            =   1080
       TabIndex        =   7
-      Top             =   3360
+      Top             =   2880
       Width           =   1335
    End
    Begin VB.ComboBox Combo1 
       Height          =   315
-      ItemData        =   "frmSTixing1.frx":0000
-      Left            =   4080
-      List            =   "frmSTixing1.frx":0013
+      ItemData        =   "frmSvt.frx":0000
+      Left            =   3840
+      List            =   "frmSvt.frx":000D
       Style           =   2  'Dropdown List
       TabIndex        =   6
-      Top             =   720
+      Top             =   480
       Width           =   1095
    End
    Begin VB.ComboBox Combo3 
       Height          =   315
-      ItemData        =   "frmSTixing1.frx":002B
-      Left            =   4080
-      List            =   "frmSTixing1.frx":003E
-      Style           =   2  'Dropdown List
+      ItemData        =   "frmSvt.frx":001E
+      Left            =   3840
+      List            =   "frmSvt.frx":0031
       TabIndex        =   5
-      Top             =   2400
+      Text            =   "Combo3"
+      Top             =   2160
       Width           =   1095
    End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
-      Left            =   3720
+      Left            =   3960
       TabIndex        =   4
-      Top             =   3360
+      Top             =   2880
       Width           =   990
    End
    Begin VB.ComboBox Combo4 
       Height          =   315
-      ItemData        =   "frmSTixing1.frx":005F
-      Left            =   1560
-      List            =   "frmSTixing1.frx":0061
+      ItemData        =   "frmSvt.frx":0049
+      Left            =   840
+      List            =   "frmSvt.frx":004B
       TabIndex        =   3
-      Top             =   720
+      Top             =   480
       Width           =   2295
    End
    Begin VB.ComboBox Combo5 
       Height          =   315
-      ItemData        =   "frmSTixing1.frx":0063
-      Left            =   1560
-      List            =   "frmSTixing1.frx":0065
+      ItemData        =   "frmSvt.frx":004D
+      Left            =   840
+      List            =   "frmSvt.frx":004F
       TabIndex        =   2
-      Top             =   1560
+      Top             =   1320
       Width           =   2295
    End
    Begin VB.ComboBox Combo6 
       Height          =   315
-      ItemData        =   "frmSTixing1.frx":0067
-      Left            =   1560
-      List            =   "frmSTixing1.frx":0069
+      ItemData        =   "frmSvt.frx":0051
+      Left            =   840
+      List            =   "frmSvt.frx":0053
       TabIndex        =   1
-      Top             =   2400
+      Top             =   2160
       Width           =   2295
    End
    Begin VB.ComboBox Combo2 
       Height          =   315
-      ItemData        =   "frmSTixing1.frx":006B
-      Left            =   4080
-      List            =   "frmSTixing1.frx":007E
-      Style           =   2  'Dropdown List
+      ItemData        =   "frmSvt.frx":0055
+      Left            =   3840
+      List            =   "frmSvt.frx":005F
       TabIndex        =   0
-      Top             =   1560
+      Text            =   "Combo2"
+      Top             =   1320
       Width           =   1095
    End
    Begin VB.Frame Frame1 
       Caption         =   "数据"
       Height          =   2415
-      Left            =   1440
+      Left            =   720
       TabIndex        =   8
-      Top             =   480
+      Top             =   240
       Width           =   2535
    End
    Begin VB.Frame Frame2 
       Caption         =   "单位"
       Height          =   2415
-      Left            =   3960
+      Left            =   3600
       TabIndex        =   9
-      Top             =   480
+      Top             =   240
       Width           =   1455
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "中位线长"
+      Caption         =   "距离"
       BeginProperty Font 
          Name            =   "宋体"
          Size            =   12
@@ -123,15 +130,15 @@ Begin VB.Form frmSTixing1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   240
-      Left            =   240
+      Left            =   120
       TabIndex        =   12
-      Top             =   720
-      Width           =   1020
+      Top             =   2280
+      Width           =   510
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "高"
+      Caption         =   "速度"
       BeginProperty Font 
          Name            =   "宋体"
          Size            =   12
@@ -142,15 +149,15 @@ Begin VB.Form frmSTixing1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   240
-      Left            =   360
+      Left            =   120
       TabIndex        =   11
-      Top             =   1560
-      Width           =   255
+      Top             =   1320
+      Width           =   510
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "面积"
+      Caption         =   "时间"
       BeginProperty Font 
          Name            =   "宋体"
          Size            =   12
@@ -161,13 +168,13 @@ Begin VB.Form frmSTixing1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   240
-      Left            =   240
+      Left            =   120
       TabIndex        =   10
-      Top             =   2400
+      Top             =   480
       Width           =   510
    End
 End
-Attribute VB_Name = "frmSTixing1"
+Attribute VB_Name = "frmSvt"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -220,79 +227,59 @@ Sub Command1_Click()
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
     e = Val(Combo6.Text)
-    If k = "cm" Then
-        b = CMtoKM(a)
-    ElseIf k = "dm" Then
-        b = DMtoKM(a)
-    ElseIf k = "mm" Then
-        b = MMtoKM(a)
-    ElseIf k = "m " Then
-        b = MtoKM(a)
-    ElseIf k = "km" Then
+    If k = "h " Then
+        b = HtoS(a)
+    ElseIf k = "min" Then
+        b = MINtoS(a)
+    ElseIf k = "s " Then
         b = a
     End If
-    If L = "cm" Then
-        d = CMtoKM(c)
-    ElseIf L = "dm" Then
-        d = DMtoKM(c)
-    ElseIf L = "mm" Then
-        d = MMtoKM(c)
-    ElseIf L = "m " Then
-        d = MtoKM(c)
-    ElseIf L = "km" Then
+    If L = "m/s" Then
         d = c
+    ElseIf L = "km/h" Then
+        d = KMHtoMS(c)
     End If
-    If m = "cm^2" Then
-        f = PFCMtoPFKM(e)
-    ElseIf m = "dm^2" Then
-        f = PFKMtoPFDM(e)
-    ElseIf m = "mm^2" Then
-        f = PFMMtoPFKM(e)
-    ElseIf m = "m^2" Then
-        f = PFMtoPFKM(e)
-    ElseIf m = "km^2" Then
+    If m = "cm" Then
+        f = CMtoM(e)
+    ElseIf m = "dm" Then
+        f = DMtoM(e)
+    ElseIf m = "mm" Then
+        f = MMtoM(e)
+    ElseIf m = "m " Then
         f = e
+    ElseIf m = "km" Then
+        f = KMtoM(e)
     End If
     If Combo4.Text = "" Then
         g = f / d
-        If k = "cm" Then
-            h = KMtoCM(g)
-        ElseIf k = "dm" Then
-            h = KMtoDM(g)
-        ElseIf k = "mm" Then
-            h = KMtoMM(g)
-        ElseIf k = "m " Then
-            h = KMtoM(g)
-        ElseIf k = "km" Then
+        If k = "s " Then
             h = g
+        ElseIf k = "min" Then
+            h = StoMIN(g)
+        ElseIf k = "h " Then
+            h = StoH(g)
         End If
     Combo4.Text = h
     ElseIf Combo5.Text = "" Then
         g = f / b
-        If L = "cm" Then
-            h = KMtoCM(g)
-        ElseIf L = "dm" Then
-            h = KMtoDM(g)
-        ElseIf L = "mm" Then
-            h = KMtoMM(g)
-        ElseIf L = "m " Then
-            h = KMtoM(g)
-        ElseIf L = "km" Then
+        If L = "m/s" Then
             h = g
+        ElseIf L = "km/h" Then
+            h = MStoKMH(g)
         End If
         Combo5.Text = h
     ElseIf Combo6.Text = "" Then
         g = b * d
-        If m = "cm^2" Then
-            h = PFKMtoPFCM(g)
-        ElseIf m = "dm^2" Then
-            h = PFKMtoPFDM(g)
-        ElseIf m = "mm^2" Then
-            h = PFKMtoPFMM(g)
-        ElseIf m = "m^2" Then
-            h = PFKMtoPFM(g)
-        ElseIf m = "km^2" Then
+        If m = "cm" Then
+            h = MtoCM(g)
+        ElseIf m = "dm" Then
+            h = MtoDM(g)
+        ElseIf m = "mm" Then
+            h = MtoMM(g)
+        ElseIf m = "m " Then
             h = g
+        ElseIf m = "km" Then
+            h = MtoKM(g)
         End If
         Combo6.Text = h
     End If
@@ -305,17 +292,17 @@ Private Sub Command2_Click()
     Combo4.Text = ""
     Combo5.Text = ""
     Combo6.Text = ""
-    Combo1.Text = titlechangdudanwei
-    Combo2.Text = titlechangdudanwei
-    Combo3.Text = titlemianjidanwei
+    Combo1.Text = "s "
+    Combo2.Text = titlesududanwei
+    Combo3.Text = titlechangdudanwei
     Command1.Caption = cmdcalccap
     Command2.Caption = cmdrstcap
 End Sub
 
 Private Sub Form_Load()
-    Combo1.Text = titlechangdudanwei
-    Combo2.Text = titlechangdudanwei
-    Combo3.Text = titlemianjidanwei
+    Combo1.Text = "s "
+    Combo2.Text = titlesududanwei
+    Combo3.Text = titlechangdudanwei
     Command1.Caption = cmdcalccap
     Command2.Caption = cmdrstcap
     If language = "英文" Then
@@ -323,7 +310,7 @@ Private Sub Form_Load()
     End If
 End Sub
 
-Private Sub combo1_KeyPress(KeyAscii As Integer)
+Private Sub Combo1_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo2.SetFocus
     End If

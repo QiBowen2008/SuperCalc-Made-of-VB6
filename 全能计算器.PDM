@@ -1,0 +1,135 @@
+[Root]
+Most Recent Package=全能计算器
+
+
+[Package|全能计算器|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=c:\Supercalc2
+
+[Package|全能计算器|Configure DAO ISAMs]
+Applicable=No
+
+[Package|全能计算器|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|全能计算器|Files Found]
+全能计算器帮助.chi=D:\VB\计算器\全能计算器帮助.chi
+
+[Package|全能计算器|Files Released]
+
+[Package|全能计算器|Missing Dependency Information]
+C:\Windows\System32\FM20.DLL=
+D:\软件\VB\Ocxs\ocx优秀控件集锦\按钮窗体类\皮肤窗体\XP窗体.ocx=
+D:\软件\VB\Ocxs\ocx优秀控件集锦\按钮窗体类\超连接\URLLabel Ctrl.ocx=
+C:\Windows\SysWOW64\XP窗体.ocx=
+C:\Windows\SysWOW64\URLLabel Ctrl.ocx=
+
+[Package|全能计算器|Out-of-Date Dependency Information]
+
+[Package|全能计算器|Files Added]
+d:\vb\计算器\config.ini=
+d:\vb\supercalc.exe.manifest=
+
+[Package|全能计算器|Files Removed]
+c:\windows\winsxs\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc\comctl32.dll=
+c:\windows\winsxs\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_2b200f664577e14b\comctl32.dll=
+c:\windows\system32\fm20.dll=
+c:\windows\system32\hh.exe=
+c:\windows\system32\hhctrl.ocx=
+c:\windows\system32\itircl.dll=
+c:\windows\system32\itss.dll=
+
+[Package|全能计算器|Files In Project]
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\vb6chs.dll=Yes
+C:\Windows\System32\FM20.DLL=No
+D:\VB\计算器\全能计算器帮助.chm=Yes
+D:\VB\计算器\全能计算器帮助.chi=Yes
+C:\Windows\System32\hhctrl.ocx=No
+C:\Windows\System32\itss.dll=No
+C:\Windows\System32\itircl.dll=No
+C:\Windows\System32\hh.exe=No
+D:\软件\VB\Wizards\PDWizard\SETUP.EXE=Yes
+D:\软件\VB\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\VB\计算器\config.ini=Yes
+D:\VB\Supercalc.exe.Manifest=Yes
+D:\VB\计算器\SuperCalc.exe=Yes
+C:\Windows\SysWOW64\URLLabel Ctrl.ocx=Yes
+C:\Windows\SysWOW64\XP窗体.ocx=Yes
+
+[Package|全能计算器|Configure Registry Files]
+Applicable=No
+
+[Package|全能计算器|Configure Remote Servers]
+Applicable=No
+
+[Package|全能计算器|Install Locations]
+D:\SuperCalc.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vb6chs.dll=$(WinSysPath)
+D:\软件\VB\Ocxs\ocx优秀控件集锦\按钮窗体类\超连接\URLLabel Ctrl.ocx=$(WinSysPath)
+D:\软件\VB\Ocxs\ocx优秀控件集锦\按钮窗体类\皮肤窗体\XP窗体.ocx=$(WinSysPath)
+C:\Windows\System32\FM20.DLL=$(WinSysPath)
+D:\VB\计算器\全能计算器帮助.chm=$(AppPath)
+D:\VB\计算器\全能计算器帮助.chi=$(AppPath)
+C:\Windows\System32\hhctrl.ocx=$(WinSysPath)
+C:\Windows\System32\itss.dll=$(WinSysPath)
+C:\Windows\System32\itircl.dll=$(WinSysPath)
+C:\Windows\System32\hh.exe=$(WinSysPath)
+D:\软件\VB\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\软件\VB\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\VB\计算器\config.ini=$(AppPath)
+D:\VB\Supercalc.exe.Manifest=$(AppPath)
+D:\VB\计算器\SuperCalc.exe=$(AppPath)
+C:\Windows\SysWOW64\URLLabel Ctrl.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\XP窗体.ocx=$(WinSysPath)
+
+[Package|全能计算器|Configure Shared Files]
+Applicable=Yes
+D:\SuperCalc.exe=No
+D:\VB\计算器\全能计算器帮助.chm=No
+D:\VB\计算器\全能计算器帮助.chi=No
+D:\VB\计算器\config.ini=No
+D:\VB\Supercalc.exe.Manifest=No
+D:\VB\计算器\SuperCalc.exe=No
+
+[Package|全能计算器|Distribution]
+Type=single
+Size=
+Title=全能计算器
+
+[Package|全能计算器|IconGroups]
+Group0=全能计算器
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|全能计算器|全能计算器]
+Icon1=SuperCalc.exe
+Title1=全能计算器
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|全能计算器|Package]
+PackageFolder=c:\Supercalc2
+ProjectFolder=D:\VB\计算器
+ServerSideCab=
+File1=c:\Supercalc2\setup.exe
+File2=c:\Supercalc2\Setup.Lst
+File3=c:\Supercalc2\SuperCalc.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

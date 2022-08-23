@@ -1,67 +1,92 @@
 VERSION 5.00
+Object = "{803953EC-0747-11D4-AC0B-00E07D76E465}#1.0#0"; "URLLabel Ctrl.ocx"
+Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmAbout 
+   BackColor       =   &H00F2DED5&
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "关于我的应用程序"
-   ClientHeight    =   3555
-   ClientLeft      =   2340
-   ClientTop       =   1935
+   Caption         =   "关于全能计算器"
+   ClientHeight    =   3585
+   ClientLeft      =   4500
+   ClientTop       =   6255
    ClientWidth     =   5730
    ClipControls    =   0   'False
+   BeginProperty Font 
+      Name            =   "微软雅黑"
+      Size            =   9
+      Charset         =   134
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2453.724
+   ScaleHeight     =   2474.431
    ScaleMode       =   0  'User
    ScaleWidth      =   5380.766
    ShowInTaskbar   =   0   'False
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   2880
+      Top             =   480
+      _ExtentX        =   4763
+      _ExtentY        =   3466
+   End
+   Begin URLLabelCtl.URLLabel URLLabel1 
+      Height          =   375
+      Left            =   600
+      TabIndex        =   7
+      Top             =   2040
+      Width           =   3855
+      _ExtentX        =   6800
+      _ExtentY        =   661
+      ForeColor       =   8388608
+      URL             =   "https://github.com/QiBowen2008/SuperCalc-Made-of-VB6"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BackStyle       =   1
+      Caption         =   "打开github主页"
+   End
    Begin VB.CommandButton CMDSYSINFO 
       Caption         =   "系统信息"
-      Height          =   405
-      Left            =   4200
-      TabIndex        =   8
-      Top             =   3120
-      Width           =   1170
-   End
-   Begin VB.CommandButton cmdok 
-      Caption         =   "确定"
-      Height          =   405
-      Left            =   4200
-      TabIndex        =   7
-      Top             =   2520
-      Width           =   1170
-   End
-   Begin VB.PictureBox picIcon 
-      AutoSize        =   -1  'True
-      ClipControls    =   0   'False
-      Height          =   540
-      Left            =   240
-      Picture         =   "frmAbout.frx":0000
-      ScaleHeight     =   337.12
-      ScaleMode       =   0  'User
-      ScaleWidth      =   337.12
-      TabIndex        =   0
-      Top             =   240
-      Width           =   540
-   End
-   Begin VB.Label Label2 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "打开此软件github主页"
       BeginProperty Font 
          Name            =   "宋体"
          Size            =   9
          Charset         =   134
          Weight          =   400
-         Underline       =   -1  'True
+         Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H8000000D&
-      Height          =   180
-      Left            =   1080
+      Height          =   405
+      Left            =   4200
       TabIndex        =   6
-      Top             =   2040
-      Width           =   1800
+      Top             =   3000
+      Width           =   1290
+   End
+   Begin VB.CommandButton cmdok 
+      Caption         =   "确定"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   405
+      Left            =   4200
+      TabIndex        =   5
+      Top             =   2520
+      Width           =   1290
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -78,8 +103,8 @@ Begin VB.Form frmAbout
       EndProperty
       ForeColor       =   &H000000FF&
       Height          =   240
-      Left            =   1080
-      TabIndex        =   5
+      Left            =   600
+      TabIndex        =   4
       Top             =   1560
       Width           =   1785
    End
@@ -94,19 +119,37 @@ Begin VB.Form frmAbout
    End
    Begin VB.Label lblDescription 
       Caption         =   "开发者：齐博文"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00000000&
       Height          =   330
-      Left            =   1050
-      TabIndex        =   1
+      Left            =   570
+      TabIndex        =   0
       Top             =   1125
       Width           =   3885
    End
    Begin VB.Label lblTitle 
       Caption         =   "全能计算器"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00000000&
       Height          =   480
-      Left            =   1050
-      TabIndex        =   3
+      Left            =   570
+      TabIndex        =   2
       Top             =   240
       Width           =   3885
    End
@@ -120,19 +163,37 @@ Begin VB.Form frmAbout
       Y2              =   1697.936
    End
    Begin VB.Label lblVersion 
-      Caption         =   "版本1.0"
+      Caption         =   "版本1.2正式版"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   225
-      Left            =   1050
-      TabIndex        =   4
+      Left            =   570
+      TabIndex        =   3
       Top             =   780
       Width           =   3885
    End
    Begin VB.Label lblDisclaimer 
       Caption         =   "警告: 此软件完全免费，代码在GitHub主页上展示，任何人可为开发贡献，请勿将代码用于商业目的"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00000000&
-      Height          =   825
+      Height          =   585
       Left            =   255
-      TabIndex        =   2
+      TabIndex        =   1
       Top             =   2760
       Width           =   3630
    End
@@ -186,11 +247,7 @@ Private Sub cmdOK_Click()
 End Sub
 
 Private Sub Form_Load()
-    
-    Me.Caption = "关于 " & App.title
-    lblVersion.Caption = "版本 " & App.Major & "." & App.Minor & "." & App.Revision
-    lblTitle.Caption = App.title
-    
+If language = "英文" Then Me.Caption = "About SuperCalc" Else Me.Caption = "关于全能计算器"
 End Sub
 
 Public Sub StartSysInfo()
@@ -276,10 +333,4 @@ GetKeyError:      ' 错误发生后将其清除...
     GetKeyValue = False                                     ' 返回失败
     rc = RegCloseKey(hKey)                                  ' 关闭注册表关键字
 End Function
-
-Private Sub Label2_Click()
-    On Error GoTo Err
-    Call ShellExecute(hwnd, "open", "https://github.com/QiBowen2008/SuperCalc-Made-of-VB6", vbNullString, vbNullString, &H0)
-Err:
-End Sub
 

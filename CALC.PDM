@@ -222,7 +222,6 @@ C:\Windows\winsxs\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.76
 [Package|标准安装软件包 1|Out-of-Date Dependency Information]
 
 [Package|标准安装软件包 1|Files Added]
-calc4.exe.manifest=
 d:\vb\supercalc.exe.manifest=
 d:\桌面\config.ini=
 
@@ -287,17 +286,6 @@ Type=single
 Size=
 Title=全能计算器
 
-[Package|标准安装软件包 1|IconGroups]
-Group0=全能计算器
-PrivateGroup0=-1
-Parent0=$(Programs)
-
-[Package|标准安装软件包 1|全能计算器]
-Icon1=CALC4.exe
-Title1=全能计算器
-StartIn1=$(AppPath)
-Key1=Icon1
-
 [Package|标准安装软件包 1|Package]
 PackageFolder=D:\VB\计算器\包 (2)
 ProjectFolder=D:\VB\计算器
@@ -307,3 +295,14 @@ File2=D:\VB\计算器\包 (2)\Setup.Lst
 File3=D:\VB\计算器\包 (2)\SuperCalc.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|标准安装软件包 1|IconGroups]
+Group0=全能计算器
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|标准安装软件包 1|全能计算器]
+Icon1=SuperCalc.exe
+Title1=全能计算器
+StartIn1=$(AppPath)
+Key1=Icon1
