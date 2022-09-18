@@ -5,8 +5,8 @@ Begin VB.Form frmSum
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Æ½¾ùÖµ"
    ClientHeight    =   4980
-   ClientLeft      =   1650
-   ClientTop       =   3615
+   ClientLeft      =   1830
+   ClientTop       =   3975
    ClientWidth     =   6330
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

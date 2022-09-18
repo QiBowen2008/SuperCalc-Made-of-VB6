@@ -1,13 +1,13 @@
 VERSION 5.00
 Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
-Begin VB.Form frmSYuanzhu 
+Begin VB.Form frmVYuanzhi 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "求圆柱体积"
-   ClientHeight    =   3780
-   ClientLeft      =   2745
-   ClientTop       =   5730
-   ClientWidth     =   6060
+   Caption         =   "求圆锥体积"
+   ClientHeight    =   4080
+   ClientLeft      =   2565
+   ClientTop       =   5370
+   ClientWidth     =   5910
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -17,143 +17,105 @@ Begin VB.Form frmSYuanzhu
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
-   LinkTopic       =   "Form2"
+   LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   ScaleHeight     =   3780
-   ScaleWidth      =   6060
+   ScaleHeight     =   4080
+   ScaleWidth      =   5910
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   4800
+   Begin VB.CommandButton Command1 
+      Caption         =   "求值"
+      Height          =   360
+      Left            =   1080
+      TabIndex        =   9
       Top             =   3120
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
-   Begin VB.ComboBox Combo3 
-      Height          =   315
-      ItemData        =   "frmSYuanzhu.frx":0000
-      Left            =   4440
-      List            =   "frmSYuanzhu.frx":0010
-      Style           =   2  'Dropdown List
-      TabIndex        =   12
-      Top             =   2160
-      Width           =   975
-   End
-   Begin VB.ComboBox Combo2 
-      Height          =   315
-      ItemData        =   "frmSYuanzhu.frx":002B
-      Left            =   4440
-      List            =   "frmSYuanzhu.frx":003B
-      Style           =   2  'Dropdown List
-      TabIndex        =   11
-      Top             =   1320
-      Width           =   975
-   End
-   Begin VB.Frame Frame2 
-      Caption         =   "单位"
-      Height          =   2535
-      Left            =   4200
-      TabIndex        =   6
-      Top             =   240
-      Width           =   1455
-      Begin VB.ComboBox Combo1 
-         Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":004F
-         Left            =   240
-         List            =   "frmSYuanzhu.frx":0062
-         Style           =   2  'Dropdown List
-         TabIndex        =   10
-         Top             =   240
-         Width           =   975
-      End
-   End
-   Begin VB.Frame Frame1 
-      Caption         =   "数据"
-      Height          =   2415
-      Left            =   1440
-      TabIndex        =   2
-      Top             =   240
-      Width           =   2535
-      Begin VB.ComboBox Combo6 
-         Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":0083
-         Left            =   120
-         List            =   "frmSYuanzhu.frx":0085
-         TabIndex        =   5
-         Top             =   1920
-         Width           =   2295
-      End
-      Begin VB.ComboBox Combo5 
-         Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":0087
-         Left            =   120
-         List            =   "frmSYuanzhu.frx":0089
-         TabIndex        =   4
-         Top             =   1080
-         Width           =   2295
-      End
-      Begin VB.ComboBox Combo4 
-         Height          =   315
-         ItemData        =   "frmSYuanzhu.frx":008B
-         Left            =   120
-         List            =   "frmSYuanzhu.frx":008D
-         TabIndex        =   3
-         Top             =   240
-         Width           =   2295
-      End
+      Width           =   1230
    End
    Begin VB.CommandButton Command2 
       Caption         =   "清空数据"
       Height          =   360
-      Left            =   3360
-      TabIndex        =   1
-      Top             =   3000
+      Left            =   3240
+      TabIndex        =   8
+      Top             =   3120
       Width           =   990
    End
-   Begin VB.CommandButton Command1 
-      Caption         =   "求值"
-      Height          =   360
-      Left            =   1200
+   Begin VB.Frame Frame1 
+      Caption         =   "数据"
+      Height          =   2415
+      Left            =   1320
+      TabIndex        =   4
+      Top             =   360
+      Width           =   2535
+      Begin VB.ComboBox Combo4 
+         Height          =   315
+         ItemData        =   "frmVYuanzhi.frx":0000
+         Left            =   120
+         List            =   "frmVYuanzhi.frx":0002
+         TabIndex        =   7
+         Top             =   240
+         Width           =   2295
+      End
+      Begin VB.ComboBox Combo5 
+         Height          =   315
+         ItemData        =   "frmVYuanzhi.frx":0004
+         Left            =   120
+         List            =   "frmVYuanzhi.frx":0006
+         TabIndex        =   6
+         Top             =   1080
+         Width           =   2295
+      End
+      Begin VB.ComboBox Combo6 
+         Height          =   315
+         ItemData        =   "frmVYuanzhi.frx":0008
+         Left            =   120
+         List            =   "frmVYuanzhi.frx":000A
+         TabIndex        =   5
+         Top             =   1920
+         Width           =   2295
+      End
+   End
+   Begin VB.ComboBox Combo2 
+      Height          =   315
+      ItemData        =   "frmVYuanzhi.frx":000C
+      Left            =   4320
+      List            =   "frmVYuanzhi.frx":001C
+      Style           =   2  'Dropdown List
+      TabIndex        =   1
+      Top             =   1440
+      Width           =   975
+   End
+   Begin VB.ComboBox Combo3 
+      Height          =   315
+      ItemData        =   "frmVYuanzhi.frx":0030
+      Left            =   4320
+      List            =   "frmVYuanzhi.frx":0040
+      Style           =   2  'Dropdown List
       TabIndex        =   0
-      Top             =   3000
-      Width           =   1230
+      Top             =   2280
+      Width           =   975
    End
-   Begin VB.Label Label2 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "高"
-      BeginProperty Font 
-         Name            =   "宋体"
-         Size            =   12
-         Charset         =   134
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   240
-      Left            =   480
-      TabIndex        =   9
-      Top             =   1320
-      Width           =   255
+   Begin Xp窗体.XpCorona XpCorona1 
+      Left            =   4680
+      Top             =   3240
+      _ExtentX        =   4763
+      _ExtentY        =   3466
    End
-   Begin VB.Label Label1 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "底面积"
-      BeginProperty Font 
-         Name            =   "宋体"
-         Size            =   12
-         Charset         =   134
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   240
-      Left            =   360
-      TabIndex        =   8
-      Top             =   480
-      Width           =   765
+   Begin VB.Frame Frame2 
+      Caption         =   "单位"
+      Height          =   2535
+      Left            =   4080
+      TabIndex        =   2
+      Top             =   360
+      Width           =   1455
+      Begin VB.ComboBox Combo1 
+         Height          =   315
+         ItemData        =   "frmVYuanzhi.frx":005B
+         Left            =   240
+         List            =   "frmVYuanzhi.frx":006E
+         Style           =   2  'Dropdown List
+         TabIndex        =   3
+         Top             =   240
+         Width           =   975
+      End
    End
    Begin VB.Label 斜边 
       AutoSize        =   -1  'True
@@ -169,13 +131,51 @@ Begin VB.Form frmSYuanzhu
          Strikethrough   =   0   'False
       EndProperty
       Height          =   240
-      Left            =   360
-      TabIndex        =   7
-      Top             =   2160
+      Left            =   240
+      TabIndex        =   12
+      Top             =   2280
       Width           =   510
    End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "底面积"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   240
+      Left            =   240
+      TabIndex        =   11
+      Top             =   600
+      Width           =   765
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "高"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   12
+         Charset         =   134
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   240
+      Left            =   360
+      TabIndex        =   10
+      Top             =   1440
+      Width           =   255
+   End
 End
-Attribute VB_Name = "frmSYuanzhu"
+Attribute VB_Name = "frmVYuanzhi"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -292,6 +292,8 @@ Sub Command1_Click()
             h = LFKMtoLFMM(g)
         ElseIf m = "m^3" Then
             h = LFKMtoLFM(g)
+        ElseIf m = "立方千米" Then
+            h = g
         End If
         Combo6.Text = Str(h)
     End If
@@ -325,5 +327,6 @@ Private Sub combo1_KeyPress(KeyAscii As Integer)
         Combo2.SetFocus
     End If
 End Sub
+
 
 

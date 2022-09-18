@@ -5,8 +5,8 @@ Begin VB.Form frmOumudinglv
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Å·Ä·¶¨ÂÉ"
    ClientHeight    =   4050
-   ClientLeft      =   6165
-   ClientTop       =   12570
+   ClientLeft      =   6345
+   ClientTop       =   12930
    ClientWidth     =   5955
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -259,7 +259,7 @@ Sub Command1_Click()
         ElseIf k = "kA" Then
             h = AtoKA(g)
         End If
-    Combo4.Text = h
+    Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / b
         If L = "Ohm" Then
@@ -269,7 +269,7 @@ Sub Command1_Click()
         ElseIf L = "kOhm" Then
             h = OtoKO(g)
         End If
-        Combo5.Text = h
+        Combo5.Text = Str(h)
     ElseIf Combo6.Text = "" Then
         g = b * d
         If m = "V " Then
@@ -279,7 +279,7 @@ Sub Command1_Click()
         ElseIf m = "kV" Then
             h = VtoKV(g)
         End If
-        Combo6.Text = h
+        Combo6.Text = Str(h)
     End If
     Combo4.AddItem Combo4.Text
     Combo5.AddItem Combo5.Text

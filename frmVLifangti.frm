@@ -5,8 +5,8 @@ Begin VB.Form frmVLifangti
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求立方体的体积"
    ClientHeight    =   4725
-   ClientLeft      =   2025
-   ClientTop       =   4290
+   ClientLeft      =   2745
+   ClientTop       =   5730
    ClientWidth     =   6945
    BeginProperty Font 
       Name            =   "Tahoma"

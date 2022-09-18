@@ -5,8 +5,8 @@ Begin VB.Form frmSSanjiaoxing1
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知底和高求三角形面积"
    ClientHeight    =   4050
-   ClientLeft      =   1710
-   ClientTop       =   3675
+   ClientLeft      =   1890
+   ClientTop       =   4035
    ClientWidth     =   6405
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -262,7 +262,7 @@ Sub Command1_Click()
         ElseIf k = "km" Then
             h = g
         End If
-    Combo4.Text = h
+    Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f * 2 / b
         If L = "cm" Then
@@ -276,7 +276,7 @@ Sub Command1_Click()
         ElseIf L = "km" Then
             h = g
         End If
-        Combo5.Text = h
+        Combo5.Text = Str(h)
     ElseIf Combo6.Text = "" Then
         g = (b * d) / 2
         If m = "cm^2" Then
@@ -290,7 +290,7 @@ Sub Command1_Click()
         ElseIf m = "km^2" Then
             h = g
         End If
-        Combo6.Text = h
+        Combo6.Text = Str(h)
     End If
     Combo4.AddItem Combo4.Text
     Combo5.AddItem Combo5.Text
@@ -319,7 +319,7 @@ Private Sub Form_Load()
     End If
 End Sub
 
-Private Sub Combo1_KeyPress(KeyAscii As Integer)
+Private Sub combo1_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo2.SetFocus
     End If

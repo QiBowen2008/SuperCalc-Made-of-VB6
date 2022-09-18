@@ -5,8 +5,8 @@ Begin VB.Form frmBMI
    BorderStyle     =   1  'Fixed Single
    Caption         =   "BMIº∆À„"
    ClientHeight    =   3825
-   ClientLeft      =   3825
-   ClientTop       =   7890
+   ClientLeft      =   5985
+   ClientTop       =   12210
    ClientWidth     =   6930
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -138,7 +138,6 @@ Begin VB.Form frmBMI
    Begin VB.Label Label8 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Label8"
       BeginProperty Font 
          Name            =   "ÀŒÃÂ"
          Size            =   12
@@ -152,7 +151,7 @@ Begin VB.Form frmBMI
       Left            =   4440
       TabIndex        =   9
       Top             =   2280
-      Width           =   810
+      Width           =   135
    End
    Begin VB.Label Label7 
       AutoSize        =   -1  'True
@@ -176,7 +175,6 @@ Begin VB.Form frmBMI
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ÀŒÃÂ"
          Size            =   12
@@ -190,7 +188,7 @@ Begin VB.Form frmBMI
       Left            =   1320
       TabIndex        =   7
       Top             =   2640
-      Width           =   810
+      Width           =   135
    End
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
@@ -292,7 +290,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Combo1_KeyPress(KeyAscii As Integer)
+Private Sub combo1_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo2.SetFocus
     End If

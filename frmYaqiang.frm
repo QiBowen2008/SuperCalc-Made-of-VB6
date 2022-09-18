@@ -4,8 +4,8 @@ Begin VB.Form frmYaqiang
    BackColor       =   &H00F2DED5&
    Caption         =   "—π«ø”Î∏°¡¶"
    ClientHeight    =   4260
-   ClientLeft      =   3525
-   ClientTop       =   7590
+   ClientLeft      =   3690
+   ClientTop       =   7935
    ClientWidth     =   6330
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -248,7 +248,7 @@ Sub Command1_Click()
         ElseIf k = "kN" Then
             h = NtoKN(g)
         End If
-    Combo4.Text = h
+    Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = b / f
         If L = "cm^2" Then
@@ -260,7 +260,7 @@ Sub Command1_Click()
         ElseIf L = "m^2" Then
             h = g
         End If
-        Combo5.Text = h
+        Combo5.Text = Str(h)
     ElseIf Combo6.Text = "" Then
         g = b / d
         If m = "MPa" Then
@@ -270,7 +270,7 @@ Sub Command1_Click()
         ElseIf m = "Pa" Then
             h = g
         End If
-        Combo6.Text = h
+        Combo6.Text = Str(h)
     End If
     Combo4.AddItem Combo4.Text
     Combo5.AddItem Combo5.Text

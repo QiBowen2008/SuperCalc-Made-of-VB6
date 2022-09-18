@@ -5,8 +5,8 @@ Begin VB.Form frmWenduhuansuan
    BorderStyle     =   1  'Fixed Single
    Caption         =   "温度换算"
    ClientHeight    =   3195
-   ClientLeft      =   3645
-   ClientTop       =   7530
+   ClientLeft      =   3825
+   ClientTop       =   7890
    ClientWidth     =   4680
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -119,11 +119,11 @@ Private Sub Command1_Click()
     If Combo1.Text = "" Then
         f = Val(Combo2.Text)
         c = (5 * f + 160) / 9
-        Combo1.Text = c
+        Combo1.Text = Str(c)
     ElseIf Combo2.Text = "" Then
         c = Val(Combo1.Text)
         f = 9 * c / 5 + 32
-        Combo2.Text = f
+        Combo2.Text = Str(f)
     Else
         MsgBox "您输入的数据错误！"
     End If

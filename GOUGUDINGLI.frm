@@ -5,8 +5,8 @@ Begin VB.Form frmGougudingli
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知两直角边求斜边"
    ClientHeight    =   3990
-   ClientLeft      =   3285
-   ClientTop       =   6810
+   ClientLeft      =   3465
+   ClientTop       =   7170
    ClientWidth     =   6510
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -254,7 +254,7 @@ Sub Command1_Click()
         ElseIf k = "m " Then
             h = KMtoM(g)
         ElseIf k = "km" Then
-            h = g
+            h = Str(g)
         End If
     Combo4.Text = h
     ElseIf Combo5.Text = "" Then
@@ -268,9 +268,9 @@ Sub Command1_Click()
         ElseIf L = "m " Then
             h = KMtoM(g)
         ElseIf L = "km" Then
-            h = g
+            h = Str(g)
         End If
-        Combo5.Text = h
+        Combo5.Text = Str(h)
     ElseIf Combo6.Text = "" Then
         g = Sqr(b ^ 2 + d ^ 2)
         If m = "cm" Then
@@ -282,9 +282,9 @@ Sub Command1_Click()
         ElseIf m = "m^2" Then
             h = KMtoM(g)
         ElseIf m = "km^2" Then
-            h = g
+            h = Str(g)
         End If
-        Combo6.Text = h
+        Combo6.Text = Str(h)
     End If
     Combo4.AddItem Combo4.Text
     Combo5.AddItem Combo5.Text
@@ -308,7 +308,7 @@ Private Sub Form_Load()
     Command2.Caption = cmdrstcap
     If language = "英文" Then Me.Caption = "Pythagorean theorem"
 End Sub
-Private Sub Combo1_KeyPress(KeyAscii As Integer)
+Private Sub combo1_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo2.SetFocus
     End If

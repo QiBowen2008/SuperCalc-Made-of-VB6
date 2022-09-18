@@ -5,8 +5,8 @@ Begin VB.Form frmSSanjiaoxing2
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知三角形三边求面积"
    ClientHeight    =   4635
-   ClientLeft      =   2730
-   ClientTop       =   5775
+   ClientLeft      =   2910
+   ClientTop       =   6135
    ClientWidth     =   6555
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

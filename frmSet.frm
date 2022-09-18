@@ -5,8 +5,8 @@ Begin VB.Form frmSet
    BorderStyle     =   1  'Fixed Single
    Caption         =   "…Ë÷√"
    ClientHeight    =   4860
-   ClientLeft      =   7350
-   ClientTop       =   15375
+   ClientLeft      =   7530
+   ClientTop       =   15735
    ClientWidth     =   5235
    BeginProperty Font 
       Name            =   "Tahoma"

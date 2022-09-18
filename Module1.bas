@@ -185,10 +185,10 @@ Public Function PFMtoPFMM(a As Double) As Double
     PFMtoPFMM = a * 1000 ^ 2
 End Function
 Public Function LFKMtoLFCM(a As Double) As Double
-    LFKMtoLFCM = a * 10000 ^ 3
+    LFKMtoLFCM = a * 100000 ^ 3
 End Function
 Public Function LFKMtoLFMM(a As Double) As Double
-    LFKMtoLFMM = a * 100000 ^ 3
+    LFKMtoLFMM = a * 1000000 ^ 3
 End Function
 Public Function LFKMtoLFDM(a As Double) As Double
     LFKMtoLFDM = a * 10000 ^ 3

@@ -5,8 +5,8 @@ Begin VB.Form frmSJuxing
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求矩形面积"
    ClientHeight    =   3975
-   ClientLeft      =   5430
-   ClientTop       =   11190
+   ClientLeft      =   5790
+   ClientTop       =   11910
    ClientWidth     =   5745
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -262,7 +262,7 @@ Sub Command1_Click()
         ElseIf k = "km" Then
             h = g
         End If
-    Combo4.Text = h
+    Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / b
         If L = "cm" Then
@@ -276,7 +276,7 @@ Sub Command1_Click()
         ElseIf L = "km" Then
             h = g
         End If
-        Combo5.Text = h
+        Combo5.Text = Str(h)
     ElseIf Combo6.Text = "" Then
         g = b * d
         If m = "cm^2" Then
@@ -290,7 +290,7 @@ Sub Command1_Click()
         ElseIf m = "km^2" Then
             h = g
         End If
-        Combo6.Text = h
+        Combo6.Text = Str(h)
     End If
     Combo4.AddItem Combo4.Text
     Combo5.AddItem Combo5.Text

@@ -4,7 +4,7 @@ Most Recent Package=全能计算器
 
 [Package|全能计算器|Root]
 SubWizProgID=PDWizard.SetupPkgSubWiz
-BuildFolder=c:\Supercalc2
+BuildFolder=c:\Supercalc4
 
 [Package|全能计算器|Configure DAO ISAMs]
 Applicable=No
@@ -125,11 +125,11 @@ StartIn1=$(AppPath)
 Key1=Icon1
 
 [Package|全能计算器|Package]
-PackageFolder=c:\Supercalc2
+PackageFolder=c:\Supercalc4
 ProjectFolder=D:\VB\计算器
 ServerSideCab=
-File1=c:\Supercalc2\setup.exe
-File2=c:\Supercalc2\Setup.Lst
-File3=c:\Supercalc2\SuperCalc.CAB
+File1=c:\Supercalc4\setup.exe
+File2=c:\Supercalc4\Setup.Lst
+File3=c:\Supercalc4\SuperCalc.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz

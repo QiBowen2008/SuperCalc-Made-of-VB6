@@ -792,7 +792,10 @@ Begin VB.Form frmCalc
          Begin VB.Menu Litituxing 
             Caption         =   "立体图形"
             Begin VB.Menu VYuanzhu 
-               Caption         =   "求圆柱体体积"
+               Caption         =   "求圆柱体积"
+            End
+            Begin VB.Menu VYuanzhui 
+               Caption         =   "求圆锥体积"
             End
          End
       End
@@ -1170,12 +1173,12 @@ Private Sub Svt_Click()
     frmSvt.Show
 End Sub
 
-Private Sub VLifangti_Click()
-    frmVLifangti.Show
-End Sub
-
 Private Sub VYuanzhu_Click()
     frmSYuanzhu.Show
+End Sub
+
+Private Sub VYuanzhui_Click()
+    frmVYuanzhi.Show
 End Sub
 
 Private Sub Yaqiang_Click()

@@ -4,8 +4,8 @@ Begin VB.Form frmSvt
    BackColor       =   &H00F2DED5&
    Caption         =   "速度，时间与路程的关系"
    ClientHeight    =   3735
-   ClientLeft      =   3690
-   ClientTop       =   7935
+   ClientLeft      =   3855
+   ClientTop       =   8280
    ClientWidth     =   6030
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -259,7 +259,7 @@ Sub Command1_Click()
         ElseIf k = "h " Then
             h = StoH(g)
         End If
-    Combo4.Text = h
+    Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / b
         If L = "m/s" Then
@@ -267,7 +267,7 @@ Sub Command1_Click()
         ElseIf L = "km/h" Then
             h = MStoKMH(g)
         End If
-        Combo5.Text = h
+        Combo5.Text = Str(h)
     ElseIf Combo6.Text = "" Then
         g = b * d
         If m = "cm" Then
@@ -281,7 +281,7 @@ Sub Command1_Click()
         ElseIf m = "km" Then
             h = MtoKM(g)
         End If
-        Combo6.Text = h
+        Combo6.Text = Str(h)
     End If
     Combo4.AddItem Combo4.Text
     Combo5.AddItem Combo5.Text
@@ -310,7 +310,7 @@ Private Sub Form_Load()
     End If
 End Sub
 
-Private Sub Combo1_KeyPress(KeyAscii As Integer)
+Private Sub combo1_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Combo2.SetFocus
     End If
