@@ -4,9 +4,9 @@ Begin VB.Form frmSet
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "设置"
-   ClientHeight    =   4860
-   ClientLeft      =   7530
-   ClientTop       =   15735
+   ClientHeight    =   3930
+   ClientLeft      =   8070
+   ClientTop       =   16815
    ClientWidth     =   5235
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -19,7 +19,7 @@ Begin VB.Form frmSet
    EndProperty
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   ScaleHeight     =   4860
+   ScaleHeight     =   3930
    ScaleWidth      =   5235
    StartUpPosition =   3  '窗口缺省
    Begin Xp窗体.XpCorona XpCorona1 
@@ -31,16 +31,16 @@ Begin VB.Form frmSet
    Begin VB.ComboBox Combo5 
       Height          =   315
       ItemData        =   "frmSet.frx":0000
-      Left            =   960
+      Left            =   2760
       List            =   "frmSet.frx":000A
       Style           =   2  'Dropdown List
       TabIndex        =   8
-      Top             =   3360
+      Top             =   2520
       Width           =   1335
    End
    Begin VB.Frame Frame1 
       Caption         =   "初始化数学单位"
-      Height          =   3615
+      Height          =   2775
       Left            =   720
       TabIndex        =   0
       Top             =   240
@@ -122,9 +122,9 @@ Begin VB.Form frmSet
          BackStyle       =   0  'Transparent
          Caption         =   "默认速度单位"
          Height          =   195
-         Left            =   240
+         Left            =   2040
          TabIndex        =   11
-         Top             =   2760
+         Top             =   1920
          Width           =   1080
       End
       Begin VB.Label Label3 
@@ -161,10 +161,10 @@ Begin VB.Form frmSet
    Begin VB.CommandButton Command1 
       Caption         =   "保存设置"
       Height          =   465
-      Left            =   1800
+      Left            =   1920
       TabIndex        =   3
       ToolTipText     =   "保存设置，重启软件后生效"
-      Top             =   4200
+      Top             =   3240
       Width           =   1110
    End
 End
@@ -230,3 +230,4 @@ End Sub
 Private Sub Label4_Click()
 
 End Sub
+

@@ -788,6 +788,15 @@ Begin VB.Form frmCalc
                   Caption         =   "求平行四边形面积"
                End
             End
+            Begin VB.Menu Yuanxing 
+               Caption         =   "圆形"
+               Begin VB.Menu SYuanxing 
+                  Caption         =   "求圆形面积"
+               End
+               Begin VB.Menu CYuanxing 
+                  Caption         =   "求圆形周长"
+               End
+            End
          End
          Begin VB.Menu Litituxing 
             Caption         =   "立体图形"
@@ -1058,6 +1067,10 @@ Private Sub CtoF_Click()
     frmWenduhuansuan.Show
 End Sub
 
+Private Sub CYuanxing_Click()
+    frmCYuanxing.Show
+End Sub
+
 Private Sub Form_Load()
     dflag = 0
     prev = 0
@@ -1171,6 +1184,10 @@ Private Sub SUM_Click()
 End Sub
 Private Sub Svt_Click()
     frmSvt.Show
+End Sub
+
+Private Sub SYuanxing_Click()
+    frmSYuanxing.Show
 End Sub
 
 Private Sub VYuanzhu_Click()

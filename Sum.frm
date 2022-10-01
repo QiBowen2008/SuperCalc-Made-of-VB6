@@ -5,8 +5,8 @@ Begin VB.Form frmSum
    BorderStyle     =   1  'Fixed Single
    Caption         =   "平均值"
    ClientHeight    =   4980
-   ClientLeft      =   1830
-   ClientTop       =   3975
+   ClientLeft      =   2190
+   ClientTop       =   4695
    ClientWidth     =   6330
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -14,8 +14,8 @@ Begin VB.Form frmSum
    ScaleWidth      =   6330
    StartUpPosition =   3  '窗口缺省
    Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   240
-      Top             =   1800
+      Left            =   4680
+      Top             =   4080
       _ExtentX        =   4763
       _ExtentY        =   3466
    End
@@ -100,7 +100,7 @@ Begin VB.Form frmSum
       Width           =   1215
    End
    Begin VB.ListBox List1 
-      Height          =   2940
+      Height          =   3480
       Left            =   360
       TabIndex        =   0
       Top             =   600

@@ -4,7 +4,7 @@ Most Recent Package=全能计算器
 
 [Package|全能计算器|Root]
 SubWizProgID=PDWizard.SetupPkgSubWiz
-BuildFolder=c:\Supercalc4
+BuildFolder=c:\Supercalc5
 
 [Package|全能计算器|Configure DAO ISAMs]
 Applicable=No
@@ -14,9 +14,9 @@ JetWorkspace=
 ODBCDirect=
 
 [Package|全能计算器|Files Found]
-全能计算器帮助.chi=D:\VB\计算器\全能计算器帮助.chi
 
 [Package|全能计算器|Files Released]
+全能计算器帮助.chi=
 
 [Package|全能计算器|Missing Dependency Information]
 C:\Windows\System32\FM20.DLL=
@@ -50,7 +50,6 @@ D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
 C:\Windows\System32\vb6chs.dll=Yes
 C:\Windows\System32\FM20.DLL=No
 D:\VB\计算器\全能计算器帮助.chm=Yes
-D:\VB\计算器\全能计算器帮助.chi=Yes
 C:\Windows\System32\hhctrl.ocx=No
 C:\Windows\System32\itss.dll=No
 C:\Windows\System32\itircl.dll=No
@@ -125,11 +124,11 @@ StartIn1=$(AppPath)
 Key1=Icon1
 
 [Package|全能计算器|Package]
-PackageFolder=c:\Supercalc4
+PackageFolder=c:\Supercalc5
 ProjectFolder=D:\VB\计算器
 ServerSideCab=
-File1=c:\Supercalc4\setup.exe
-File2=c:\Supercalc4\Setup.Lst
-File3=c:\Supercalc4\SuperCalc.CAB
+File1=c:\Supercalc5\setup.exe
+File2=c:\Supercalc5\Setup.Lst
+File3=c:\Supercalc5\SuperCalc.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz

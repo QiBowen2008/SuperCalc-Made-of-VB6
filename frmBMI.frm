@@ -5,8 +5,8 @@ Begin VB.Form frmBMI
    BorderStyle     =   1  'Fixed Single
    Caption         =   "BMIº∆À„"
    ClientHeight    =   3825
-   ClientLeft      =   5985
-   ClientTop       =   12210
+   ClientLeft      =   6165
+   ClientTop       =   12570
    ClientWidth     =   6930
    BeginProperty Font 
       Name            =   "Tahoma"

@@ -6,8 +6,8 @@ Begin VB.Form frmAbout
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "关于全能计算器"
    ClientHeight    =   3585
-   ClientLeft      =   4500
-   ClientTop       =   6255
+   ClientLeft      =   4680
+   ClientTop       =   6615
    ClientWidth     =   5730
    ClipControls    =   0   'False
    BeginProperty Font 
@@ -27,15 +27,15 @@ Begin VB.Form frmAbout
    ScaleWidth      =   5380.766
    ShowInTaskbar   =   0   'False
    Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   2880
-      Top             =   480
+      Left            =   1080
+      Top             =   3000
       _ExtentX        =   4763
       _ExtentY        =   3466
    End
    Begin URLLabelCtl.URLLabel URLLabel1 
       Height          =   375
       Left            =   600
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   2040
       Width           =   3855
       _ExtentX        =   6800
@@ -66,9 +66,9 @@ Begin VB.Form frmAbout
          Strikethrough   =   0   'False
       EndProperty
       Height          =   405
-      Left            =   4200
-      TabIndex        =   6
-      Top             =   3000
+      Left            =   3840
+      TabIndex        =   5
+      Top             =   2760
       Width           =   1290
    End
    Begin VB.CommandButton cmdok 
@@ -83,10 +83,50 @@ Begin VB.Form frmAbout
          Strikethrough   =   0   'False
       EndProperty
       Height          =   405
-      Left            =   4200
-      TabIndex        =   5
-      Top             =   2520
+      Left            =   720
+      TabIndex        =   4
+      Top             =   2760
       Width           =   1290
+   End
+   Begin VB.Label Label3 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "学校：青岛经济技术开发区第四中学"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   330
+      Left            =   600
+      TabIndex        =   8
+      Top             =   1200
+      Width           =   3885
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "邮箱：qibowen7852008@qq.com"
+      BeginProperty Font 
+         Name            =   "宋体"
+         Size            =   9
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   330
+      Left            =   600
+      TabIndex        =   7
+      Top             =   1440
+      Width           =   3885
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -104,8 +144,8 @@ Begin VB.Form frmAbout
       ForeColor       =   &H000000FF&
       Height          =   240
       Left            =   600
-      TabIndex        =   4
-      Top             =   1560
+      TabIndex        =   3
+      Top             =   1680
       Width           =   1785
    End
    Begin VB.Line Line1 
@@ -130,9 +170,9 @@ Begin VB.Form frmAbout
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   330
-      Left            =   570
+      Left            =   600
       TabIndex        =   0
-      Top             =   1125
+      Top             =   840
       Width           =   3885
    End
    Begin VB.Label lblTitle 
@@ -147,10 +187,10 @@ Begin VB.Form frmAbout
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00000000&
-      Height          =   480
-      Left            =   570
-      TabIndex        =   2
-      Top             =   240
+      Height          =   360
+      Left            =   600
+      TabIndex        =   1
+      Top             =   120
       Width           =   3885
    End
    Begin VB.Line Line1 
@@ -163,7 +203,7 @@ Begin VB.Form frmAbout
       Y2              =   1697.936
    End
    Begin VB.Label lblVersion 
-      Caption         =   "版本1.2正式版"
+      Caption         =   "版本1.5正式版"
       BeginProperty Font 
          Name            =   "宋体"
          Size            =   9
@@ -174,28 +214,10 @@ Begin VB.Form frmAbout
          Strikethrough   =   0   'False
       EndProperty
       Height          =   225
-      Left            =   570
-      TabIndex        =   3
-      Top             =   780
+      Left            =   600
+      TabIndex        =   2
+      Top             =   480
       Width           =   3885
-   End
-   Begin VB.Label lblDisclaimer 
-      Caption         =   "警告: 此软件完全免费，代码在GitHub主页上展示，任何人可为开发贡献，请勿将代码用于商业目的"
-      BeginProperty Font 
-         Name            =   "宋体"
-         Size            =   9
-         Charset         =   134
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00000000&
-      Height          =   585
-      Left            =   255
-      TabIndex        =   1
-      Top             =   2760
-      Width           =   3630
    End
 End
 Attribute VB_Name = "frmAbout"
@@ -334,3 +356,10 @@ GetKeyError:      ' 错误发生后将其清除...
     rc = RegCloseKey(hKey)                                  ' 关闭注册表关键字
 End Function
 
+Private Sub Label3_Click()
+
+End Sub
+
+Private Sub lblVersion_Click()
+
+End Sub
