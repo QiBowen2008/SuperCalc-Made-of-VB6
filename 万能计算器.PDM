@@ -1,0 +1,121 @@
+[Root]
+Most Recent Package=万能计算器
+
+
+[Package|万能计算器|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\桌面\代码\包 (4)\新建文件夹
+
+[Package|万能计算器|Configure DAO ISAMs]
+Applicable=No
+
+[Package|万能计算器|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|万能计算器|Files Found]
+
+[Package|万能计算器|Files Released]
+万能计算器帮助.CHI=
+
+[Package|万能计算器|Missing Dependency Information]
+
+[Package|万能计算器|Out-of-Date Dependency Information]
+
+[Package|万能计算器|Files Added]
+d:\桌面\代码\config.ini=
+d:\桌面\代码\supercalc.exe.manifest=
+
+[Package|万能计算器|Files Removed]
+c:\windows\system32\fm20.dll=
+c:\windows\system32\hh.exe=
+c:\windows\system32\hhctrl.ocx=
+c:\windows\system32\itircl.dll=
+c:\windows\system32\itss.dll=
+
+[Package|万能计算器|Files In Project]
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\vb6chs.dll=Yes
+C:\Windows\System32\FM20.DLL=No
+D:\桌面\代码\万能计算器帮助.chm=Yes
+C:\Windows\System32\hhctrl.ocx=No
+C:\Windows\System32\itss.dll=No
+C:\Windows\System32\itircl.dll=No
+C:\Windows\System32\hh.exe=No
+D:\软件\VB\Wizards\PDWizard\SETUP.EXE=Yes
+D:\软件\VB\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+D:\软件\VB\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\桌面\代码\config.ini=Yes
+D:\桌面\代码\Supercalc.exe.Manifest=Yes
+C:\Windows\SysWOW64\SysTray.ocx=Yes
+D:\桌面\代码\SuperCalc.exe=Yes
+
+[Package|万能计算器|Configure Registry Files]
+Applicable=No
+
+[Package|万能计算器|Configure Remote Servers]
+Applicable=No
+
+[Package|万能计算器|Install Locations]
+D:\SuperCalc.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vb6chs.dll=$(WinSysPath)
+D:\桌面\第三方控件\url.ocx=$(WinSysPath)
+D:\桌面\第三方控件\SysTray.ocx=$(WinSysPath)
+D:\桌面\代码\万能计算器帮助.chm=$(AppPath)
+D:\软件\VB\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\软件\VB\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\软件\VB\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\桌面\代码\config.ini=$(AppPath)
+D:\桌面\代码\Supercalc.exe.Manifest=$(AppPath)
+D:\桌面\SuperCalc.exe=$(AppPath)
+C:\Windows\SysWOW64\url.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\SysTray.ocx=$(WinSysPath)
+D:\桌面\代码\SuperCalc.exe=$(AppPath)
+
+[Package|万能计算器|Configure Shared Files]
+Applicable=Yes
+D:\SuperCalc.exe=No
+D:\桌面\代码\万能计算器帮助.chm=No
+D:\桌面\代码\config.ini=No
+D:\桌面\代码\Supercalc.exe.Manifest=No
+D:\桌面\SuperCalc.exe=No
+D:\桌面\代码\SuperCalc.exe=No
+
+[Package|万能计算器|Distribution]
+Type=single
+Size=
+Title=万能计算器
+
+[Package|万能计算器|IconGroups]
+Group0=万能计算器
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|万能计算器|万能计算器]
+Icon1=SuperCalc.exe
+Title1=万能计算器
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|万能计算器|Package]
+PackageFolder=D:\桌面\代码\包 (4)\新建文件夹
+ProjectFolder=D:\桌面\代码
+ServerSideCab=
+File1=D:\桌面\代码\包 (4)\新建文件夹\setup.exe
+File2=D:\桌面\代码\包 (4)\新建文件夹\Setup.Lst
+File3=D:\桌面\代码\包 (4)\新建文件夹\SuperCalc.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

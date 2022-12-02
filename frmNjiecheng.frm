@@ -1,13 +1,12 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmNjiecheng 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "计算n的阶乘"
-   ClientHeight    =   1830
-   ClientLeft      =   2205
-   ClientTop       =   4650
-   ClientWidth     =   5010
+   ClientHeight    =   2655
+   ClientLeft      =   2160
+   ClientTop       =   4320
+   ClientWidth     =   5355
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -19,15 +18,9 @@ Begin VB.Form frmNjiecheng
    EndProperty
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
-   ScaleHeight     =   1830
-   ScaleWidth      =   5010
+   ScaleHeight     =   2655
+   ScaleWidth      =   5355
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   4560
-      Top             =   1440
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command1 
       Caption         =   "计算"
       Height          =   360
@@ -127,9 +120,3 @@ Private Sub Command1_Click()
     Text2.Text = Str(nk)
 End Sub
 
-Private Sub Form_Load()
-    If language = "英文" Then
-        Me.Caption = "Find n factorial"
-    End If
-    Command1.Caption = cmdcalccap
-End Sub

@@ -1,24 +1,17 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSJuxing 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求矩形面积"
    ClientHeight    =   3975
-   ClientLeft      =   7590
-   ClientTop       =   15510
+   ClientLeft      =   7770
+   ClientTop       =   15870
    ClientWidth     =   5745
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   3975
    ScaleWidth      =   5745
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona2 
-      Left            =   5040
-      Top             =   2880
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.ComboBox Combo2 
       Height          =   300
       ItemData        =   "SJuxing.frx":0000
@@ -312,11 +305,6 @@ Private Sub Form_Load()
     Combo1.Text = titlechangdudanwei
     Combo2.Text = titlechangdudanwei
     Combo3.Text = titlemianjidanwei
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Find the area of the rectangle"
-    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

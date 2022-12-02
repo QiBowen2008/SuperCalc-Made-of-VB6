@@ -1,12 +1,11 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmOumudinglv 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "欧姆定律"
    ClientHeight    =   4050
-   ClientLeft      =   6345
-   ClientTop       =   12930
+   ClientLeft      =   6525
+   ClientTop       =   13290
    ClientWidth     =   5955
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -22,12 +21,6 @@ Begin VB.Form frmOumudinglv
    ScaleHeight     =   4050
    ScaleWidth      =   5955
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   0
-      Top             =   2520
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   360
@@ -221,10 +214,10 @@ Sub Command1_Click()
     Dim g As Double
     Dim h As Double
     Dim k As String
-    Dim L As String
+    Dim l As String
     Dim m As String
     k = Combo1.Text
-    L = Combo2.Text
+    l = Combo2.Text
     m = Combo3.Text
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
@@ -236,11 +229,11 @@ Sub Command1_Click()
     ElseIf k = "kA" Then
         b = KAtoA(a)
     End If
-    If L = "Ohm" Then
+    If l = "Ohm" Then
         d = c
-    ElseIf L = "kOhm" Then
+    ElseIf l = "kOhm" Then
         d = KOtoO(c)
-    ElseIf L = "mOhm" Then
+    ElseIf l = "mOhm" Then
         d = MOtoO(c)
     End If
     If m = "V " Then
@@ -262,11 +255,11 @@ Sub Command1_Click()
     Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / b
-        If L = "Ohm" Then
+        If l = "Ohm" Then
             h = g
-        ElseIf L = "mOhm" Then
+        ElseIf l = "mOhm" Then
             h = OtoMO(g)
-        ElseIf L = "kOhm" Then
+        ElseIf l = "kOhm" Then
             h = OtoKO(g)
         End If
         Combo5.Text = Str(h)
@@ -301,11 +294,6 @@ Private Sub Form_Load()
     Combo1.Text = "A "
     Combo2.Text = titledianzudanwei
     Combo3.Text = "V "
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Ohm's law"
-    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

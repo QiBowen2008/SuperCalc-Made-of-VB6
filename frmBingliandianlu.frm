@@ -1,12 +1,11 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmBingliandianlu 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "计算并联电路总阻值"
    ClientHeight    =   3555
-   ClientLeft      =   4185
-   ClientTop       =   8610
+   ClientLeft      =   4365
+   ClientTop       =   8970
    ClientWidth     =   6300
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -51,12 +50,6 @@ Begin VB.Form frmBingliandianlu
       TabIndex        =   1
       Top             =   960
       Width           =   2055
-   End
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   3120
-      Top             =   840
-      _ExtentX        =   4763
-      _ExtentY        =   3466
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
@@ -142,7 +135,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim rs As Double
 
-Private Sub Combo1_KeyPress(KeyAscii As Integer)
+Private Sub combo1_KeyPress(KeyAscii As Integer)
     Dim r As Double
     If KeyAscii = 13 Then
         r = Val(Combo1.Text)
@@ -164,12 +157,3 @@ Private Sub Command2_Click()
     Combo1.Text = "": Label3.Caption = "0"
 End Sub
 
-Private Sub Form_Load()
-    Label1.Caption = lblsum
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Calculate the total resistance of the parallel resistance"
-        Label2.Caption = "resistance in each circuit"
-    End If
-End Sub

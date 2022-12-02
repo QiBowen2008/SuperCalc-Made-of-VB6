@@ -1,12 +1,11 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmBMI 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "BMI计算"
    ClientHeight    =   3825
-   ClientLeft      =   6165
-   ClientTop       =   12570
+   ClientLeft      =   6345
+   ClientTop       =   12930
    ClientWidth     =   6930
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -80,12 +79,6 @@ Begin VB.Form frmBMI
       TabIndex        =   4
       Top             =   360
       Width           =   1335
-   End
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   6360
-      Top             =   2400
-      _ExtentX        =   4763
-      _ExtentY        =   3466
    End
    Begin VB.Label Label11 
       AutoSize        =   -1  'True
@@ -631,10 +624,6 @@ Private Sub Form_Load()
     Combo3.Text = "cm"
     Combo1.Text = "175"
     Combo4.Text = "成年"
-    Command2.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "BMI calculation"
-    End If
+
 End Sub
 

@@ -1,24 +1,17 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSum 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "平均值"
    ClientHeight    =   4980
-   ClientLeft      =   2190
-   ClientTop       =   4695
+   ClientLeft      =   2370
+   ClientTop       =   5055
    ClientWidth     =   6330
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   4980
    ScaleWidth      =   6330
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   4680
-      Top             =   4080
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.TextBox Text4 
       BeginProperty Font 
          Name            =   "宋体"
@@ -240,14 +233,6 @@ Private Sub Command2_Click()
     Text3.Text = ""
     List1.Clear
     nc = 0
-End Sub
-
-Private Sub Form_Load()
-    Command2.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Averaging"
-    End If
 End Sub
 
 Private Sub Text1_KeyPress(KeyAscii As Integer)

@@ -1,11 +1,10 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmYaqiang 
    BackColor       =   &H00F2DED5&
    Caption         =   "压强与浮力"
    ClientHeight    =   4260
-   ClientLeft      =   3690
-   ClientTop       =   7935
+   ClientLeft      =   3855
+   ClientTop       =   8280
    ClientWidth     =   6330
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -21,12 +20,6 @@ Begin VB.Form frmYaqiang
    ScaleWidth      =   6330
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   5160
-      Top             =   3600
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
@@ -211,10 +204,10 @@ Sub Command1_Click()
     Dim g As Double
     Dim h As Double
     Dim k As String
-    Dim L As String
+    Dim l As String
     Dim m As String
     k = Combo1.Text
-    L = Combo2.Text
+    l = Combo2.Text
     m = Combo3.Text
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
@@ -225,13 +218,13 @@ Sub Command1_Click()
     ElseIf k = "kN" Then
         b = KNtoN(a)
     End If
-    If L = "cm^2" Then
+    If l = "cm^2" Then
         d = PFCMtoPFM(c)
-    ElseIf L = "dm^2" Then
+    ElseIf l = "dm^2" Then
         d = PFDMtoPFM(c)
-    ElseIf L = "mm^2" Then
+    ElseIf l = "mm^2" Then
         d = PFMMtoPFM(c)
-    ElseIf L = "m^2" Then
+    ElseIf l = "m^2" Then
         d = c
     End If
     If m = "KPa" Then
@@ -251,13 +244,13 @@ Sub Command1_Click()
     Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = b / f
-        If L = "cm^2" Then
+        If l = "cm^2" Then
             h = PFMtoPFCM(g)
-        ElseIf L = "dm^2" Then
+        ElseIf l = "dm^2" Then
             h = PFMtoPFDM(g)
-        ElseIf L = "mm^2" Then
+        ElseIf l = "mm^2" Then
             h = PFMtoPFMM(g)
-        ElseIf L = "m^2" Then
+        ElseIf l = "m^2" Then
             h = g
         End If
         Combo5.Text = Str(h)
@@ -293,9 +286,4 @@ Private Sub Form_Load()
     Combo1.Text = "N "
     Combo2.Text = titlemianjidanwei
     Combo3.Text = titleyaqiangdanwei
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Pressure and pressure"
-    End If
 End Sub

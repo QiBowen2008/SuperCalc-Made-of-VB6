@@ -1,12 +1,11 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSet 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "设置"
-   ClientHeight    =   3930
-   ClientLeft      =   8070
-   ClientTop       =   16815
+   ClientHeight    =   4920
+   ClientLeft      =   8430
+   ClientTop       =   17535
    ClientWidth     =   5235
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -19,27 +18,31 @@ Begin VB.Form frmSet
    EndProperty
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   ScaleHeight     =   3930
+   ScaleHeight     =   4920
    ScaleWidth      =   5235
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   5040
-      Top             =   2880
-      _ExtentX        =   4763
-      _ExtentY        =   3466
+   Begin VB.ComboBox Combo4 
+      Height          =   315
+      ItemData        =   "frmSet.frx":0000
+      Left            =   3120
+      List            =   "frmSet.frx":000D
+      Style           =   2  'Dropdown List
+      TabIndex        =   15
+      Top             =   3480
+      Width           =   1095
    End
    Begin VB.ComboBox Combo5 
       Height          =   315
-      ItemData        =   "frmSet.frx":0000
+      ItemData        =   "frmSet.frx":0025
       Left            =   2760
-      List            =   "frmSet.frx":000A
+      List            =   "frmSet.frx":002F
       Style           =   2  'Dropdown List
       TabIndex        =   8
       Top             =   2520
       Width           =   1335
    End
    Begin VB.Frame Frame1 
-      Caption         =   "初始化数学单位"
+      Caption         =   "初始化单位"
       Height          =   2775
       Left            =   720
       TabIndex        =   0
@@ -47,9 +50,9 @@ Begin VB.Form frmSet
       Width           =   3855
       Begin VB.ComboBox Combo9 
          Height          =   315
-         ItemData        =   "frmSet.frx":0019
+         ItemData        =   "frmSet.frx":003E
          Left            =   2040
-         List            =   "frmSet.frx":0026
+         List            =   "frmSet.frx":004B
          Style           =   2  'Dropdown List
          TabIndex        =   10
          Top             =   1440
@@ -57,9 +60,9 @@ Begin VB.Form frmSet
       End
       Begin VB.ComboBox Combo8 
          Height          =   315
-         ItemData        =   "frmSet.frx":0038
+         ItemData        =   "frmSet.frx":005D
          Left            =   2040
-         List            =   "frmSet.frx":0045
+         List            =   "frmSet.frx":006A
          Style           =   2  'Dropdown List
          TabIndex        =   9
          Top             =   600
@@ -67,9 +70,9 @@ Begin VB.Form frmSet
       End
       Begin VB.ComboBox Combo3 
          Height          =   315
-         ItemData        =   "frmSet.frx":0057
+         ItemData        =   "frmSet.frx":007C
          Left            =   240
-         List            =   "frmSet.frx":0067
+         List            =   "frmSet.frx":008C
          Style           =   2  'Dropdown List
          TabIndex        =   7
          Top             =   2280
@@ -77,9 +80,9 @@ Begin VB.Form frmSet
       End
       Begin VB.ComboBox Combo2 
          Height          =   315
-         ItemData        =   "frmSet.frx":0082
+         ItemData        =   "frmSet.frx":00A7
          Left            =   240
-         List            =   "frmSet.frx":0092
+         List            =   "frmSet.frx":00B7
          Style           =   2  'Dropdown List
          TabIndex        =   5
          Top             =   1440
@@ -87,9 +90,9 @@ Begin VB.Form frmSet
       End
       Begin VB.ComboBox Combo1 
          Height          =   315
-         ItemData        =   "frmSet.frx":00AD
+         ItemData        =   "frmSet.frx":00D2
          Left            =   240
-         List            =   "frmSet.frx":00BD
+         List            =   "frmSet.frx":00E2
          TabIndex        =   1
          Text            =   "Combo1"
          Top             =   600
@@ -161,11 +164,30 @@ Begin VB.Form frmSet
    Begin VB.CommandButton Command1 
       Caption         =   "保存设置"
       Height          =   465
-      Left            =   1920
+      Left            =   2040
       TabIndex        =   3
       ToolTipText     =   "保存设置，重启软件后生效"
-      Top             =   3240
+      Top             =   3960
       Width           =   1110
+   End
+   Begin VB.Label Label4 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "关闭时自动隐藏到托盘"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   10.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   840
+      TabIndex        =   14
+      Top             =   3480
+      Width           =   2340
    End
 End
 Attribute VB_Name = "frmSet"
@@ -174,60 +196,26 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Private Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Long, ByVal lpFileName As String) As Long
-Private Declare Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpString As Any, ByVal lpFileName As String) As Long
-
-'注：写入与读取的[主项名]和[子项名]一定要相同！
-Private Function STRYMINI(txtym1 As String, txtym2 As String, txtym3 As String, ONOFF As Boolean) As String
-    Dim ULR As String
-    ULR = App.Path & "\config.ini" 'INI文件路径
-    Dim txtBuff As String
-    If ONOFF = True Then '读取
-        '定义读取字符串的长度，“Space" 取 实 际 字 符 去 掉 字 符 后 面 多 余 的 空 格 。
-        txtBuff = Space(1000)
-        't x t B u f f = S p a c e "取实际字符去掉字符后面多余的空格。 txtBuff = Space"取实际字符去掉字符后面多余的空格。
-        '读取INI文件(主项名,子项名,空,读取子项名值,读取字符串长度,路径)
-        Call GetPrivateProfileString(txtym1, txtym2, "", txtBuff, Len(txtBuff), ULR)
-        '显示实际字符串。取"txtBuff"左边的字符串(取得的字符串,字符串总长度(去掉字符串右边多余的空格字符(取得的字符串))得出字符串实际长度多一个，因此减1)
-        txtBuff = Left(txtBuff, Len(RTrim(txtBuff)) - 1)
-        '把读取到的字符串传递到"STRYMINI"函数
-        STRYMINI = txtBuff
-    Else
-        '把字符串写入INI文件(主项名，子项名，值，保存INI文件的路径)
-        Call WritePrivateProfileString(txtym1, txtym2, txtym3, ULR)
-    End If
-End Function
-
 '写入数据：
 Private Sub Command1_Click()
-    Call STRYMINI("startupdanwei", "changdudanwei", Combo1.Text, False)
-    Call STRYMINI("startupdanwei", "mianjidanwei", Combo2.Text, False)
-    Call STRYMINI("startupdanwei", "tijidanwei", Combo3.Text, False)
-    Call STRYMINI("startupdanwei", "sududanwei", Combo5.Text, False)
-    Call STRYMINI("startupdanwei", "dianzudanwei", Combo8.Text, False)
-    Call STRYMINI("startupdanwei", "yaqiangdanwei", Combo9.Text, False)
-    MsgBox "重启后生效", vbOKOnly, "温馨提示"
+    Call STRYMINI("startupdanwei", "changdudanwei", Combo1.Text)
+    Call STRYMINI("startupdanwei", "mianjidanwei", Combo2.Text)
+    Call STRYMINI("startupdanwei", "tijidanwei", Combo3.Text)
+    Call STRYMINI("startupdanwei", "sududanwei", Combo5.Text)
+    Call STRYMINI("startupdanwei", "dianzudanwei", Combo8.Text)
+    Call STRYMINI("startupdanwei", "yaqiangdanwei", Combo9.Text)
+    Call STRYMINI("startupdanwei", "tuopan", Combo4.Text)
+    titletuopan = Combo4.Text
     Unload Me
     frmCalc.Refresh
 End Sub
 
 Private Sub Form_Load()
-    If language = "英文" Then
-        Me.Caption = "Setup"
-    End If
     Combo1.Text = titlechangdudanwei
     Combo2.Text = titlemianjidanwei
     Combo3.Text = titletijidanwei
     Combo5.Text = titlesududanwei
     Combo8.Text = titledianzudanwei
     Combo9.Text = titleyaqiangdanwei
+    Combo4.Text = titletuopan
 End Sub
-
-Private Sub Frame2_DragDrop(Source As Control, X As Single, Y As Single)
-
-End Sub
-
-Private Sub Label4_Click()
-
-End Sub
-

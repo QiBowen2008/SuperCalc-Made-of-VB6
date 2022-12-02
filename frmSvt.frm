@@ -1,11 +1,10 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSvt 
    BackColor       =   &H00F2DED5&
    Caption         =   "速度，时间与路程的关系"
    ClientHeight    =   3735
-   ClientLeft      =   3855
-   ClientTop       =   8280
+   ClientLeft      =   4020
+   ClientTop       =   8625
    ClientWidth     =   6030
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -21,12 +20,6 @@ Begin VB.Form frmSvt
    ScaleWidth      =   6030
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   5640
-      Top             =   2640
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   360
@@ -219,10 +212,10 @@ Sub Command1_Click()
     Dim g As Double
     Dim h As Double
     Dim k As String
-    Dim L As String
+    Dim l As String
     Dim m As String
     k = Combo1.Text
-    L = Combo2.Text
+    l = Combo2.Text
     m = Combo3.Text
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
@@ -234,9 +227,9 @@ Sub Command1_Click()
     ElseIf k = "s " Then
         b = a
     End If
-    If L = "m/s" Then
+    If l = "m/s" Then
         d = c
-    ElseIf L = "km/h" Then
+    ElseIf l = "km/h" Then
         d = KMHtoMS(c)
     End If
     If m = "cm" Then
@@ -262,9 +255,9 @@ Sub Command1_Click()
     Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / b
-        If L = "m/s" Then
+        If l = "m/s" Then
             h = g
-        ElseIf L = "km/h" Then
+        ElseIf l = "km/h" Then
             h = MStoKMH(g)
         End If
         Combo5.Text = Str(h)
@@ -303,11 +296,6 @@ Private Sub Form_Load()
     Combo1.Text = "s "
     Combo2.Text = titlesududanwei
     Combo3.Text = titlechangdudanwei
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Find the area of the rectangle"
-    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

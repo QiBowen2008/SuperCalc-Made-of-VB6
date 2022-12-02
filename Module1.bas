@@ -1,6 +1,7 @@
 Attribute VB_Name = "Module1"
 Option Explicit
 Public titlechangdudanwei As String
+Public titletuopan As String
 Public titlemianjidanwei As String
 Public titletijidanwei As String
 Public titlesududanwei As String
@@ -18,17 +19,23 @@ Private Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivat
             ByVal lpDefault As Long, _
             ByVal lpReturnedString As Long, _
             ByVal nSize As Long, _
-            ByVal lpFileName As Long) As Long '声明写INI文件API
+            ByVal lpFileName As Long) As Long
 Public langjisuanen As String, langfuweien As String
+Private Declare Function WritePrivateProfileString Lib "kernel32" Alias "WritePrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpString As Any, ByVal lpFileName As String) As Long
+'写INI
+Public Function STRYMINI(txtym1 As String, txtym2 As String, txtym3 As String) As String
+    Dim ULR As String
+    ULR = App.Path & "\config.ini" 'INI文件路径
+    '把字符串写入INI文件(主项名，子项名，值，保存INI文件的路径)
+    Call WritePrivateProfileString(txtym1, txtym2, txtym3, ULR)
+End Function
 '读INI文件
 Public Function GetValueFromINIFile(ByVal SectionName As String, _
     ByVal KeyName As String, _
     ByVal IniFileName As String) As String
-
     Dim strBuf As String
     '128个字符，初始化时用 0 填充
     strBuf = String(128, 0)
-
     GetPrivateProfileString StrPtr(SectionName), _
         StrPtr(KeyName), _
         StrPtr(""), _
@@ -43,46 +50,6 @@ Sub Main()
     '读取INI文件中指定的节和节/键
     '节的名称：AppName
     '键名称：Title
-    language = GetValueFromINIFile("startuplanguage", "language", App.Path & "\config.ini")
-    If language = "英文" Then
-        cmdcalccap = "Calculation"
-        cmdrstcap = "Reset"
-        lbllong = "longth"
-        lblwide = "width"
-        lblhigh = "hight"
-        lblmianji = "Aera"
-        lbltiji = "volume"
-        lbldimianji = "The bottom area"
-        lblshijian = "time"
-        lblsudu = "speed"
-        lblyaqiang = "P"
-        lblli = "force"
-        lblsum = "Sum"
-        lblpingjunzhi = "average"
-        lblinputshuju = "Inputdata"
-        lbldanwei = "Unit"
-        lblshujugeshu = "Count"
-        lblweigh = "weight"
-    ElseIf language = "简体中文" Then
-        lbllong = "长"
-        lblwide = "宽"
-        lblhigh = "高"
-        lblmianji = "面积"
-        lbltiji = "体积"
-        lbldimianji = "底面积"
-        lblshijian = "时间"
-        lblsudu = "s速度"
-        lblyaqiang = "压强"
-        lblli = "f力"
-        lblsum = "总和"
-        lblpingjunzhi = "平均值"
-        lblinputshuju = "输入数据"
-        lbldanwei = "单位"
-        lblshujugeshu = "已输入个数"
-        cmdcalccap = "计算"
-        cmdrstcap = "复位"
-        lblweigh = "重量"
-    End If
     titlechangdudanwei = GetValueFromINIFile("startupdanwei", "changdudanwei", App.Path & "\config.ini")
     titlemianjidanwei = GetValueFromINIFile("startupdanwei", "mianjidanwei", App.Path & "\config.ini")
     titletijidanwei = GetValueFromINIFile("startupdanwei", "tijidanwei", App.Path & "\config.ini")
@@ -92,6 +59,7 @@ Sub Main()
     titledianliudanwei = GetValueFromINIFile("startupdanwei", "dianliudanwei", App.Path & "\config.ini")
     titleyaqiangdanwei = GetValueFromINIFile("startupdanwei", "yaqiangdanwei", App.Path & "\config.ini")
     titledianzudanwei = GetValueFromINIFile("startupdanwei", "dianzudanwei", App.Path & "\config.ini")
+    titletuopan = GetValueFromINIFile("startupdanwei", "tuopan", App.Path & "\config.ini")
     frmCalc.Show
 End Sub
 Public Function CMtoKM(a As Double) As Double

@@ -1,12 +1,11 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmVYuanzhi 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求圆锥体积"
    ClientHeight    =   4080
-   ClientLeft      =   2565
-   ClientTop       =   5370
+   ClientLeft      =   2745
+   ClientTop       =   5730
    ClientWidth     =   5910
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -92,12 +91,6 @@ Begin VB.Form frmVYuanzhi
       TabIndex        =   0
       Top             =   2280
       Width           =   975
-   End
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   4680
-      Top             =   3240
-      _ExtentX        =   4763
-      _ExtentY        =   3466
    End
    Begin VB.Frame Frame2 
       Caption         =   "单位"
@@ -221,10 +214,10 @@ Sub Command1_Click()
     Dim g As Double
     Dim h As Double
     Dim k As String
-    Dim L As String
+    Dim l As String
     Dim m As String
     k = Combo1.Text
-    L = Combo2.Text
+    l = Combo2.Text
     m = Combo3.Text
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
@@ -238,13 +231,13 @@ Sub Command1_Click()
     ElseIf k = "m^2" Then
         b = PFMtoPFKM(a)
     End If
-    If L = "cm" Then
+    If l = "cm" Then
         d = CMtoKM(c)
-    ElseIf L = "dm" Then
+    ElseIf l = "dm" Then
         d = DMtoKM(c)
-    ElseIf L = "mm" Then
+    ElseIf l = "mm" Then
         d = MMtoKM(c)
-    ElseIf L = "m " Then
+    ElseIf l = "m " Then
         d = MtoKM(c)
     End If
     If m = "cm^3" Then
@@ -270,15 +263,15 @@ Sub Command1_Click()
     Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / b
-        If L = "cm" Then
+        If l = "cm" Then
             h = KMtoCM(g)
-        ElseIf L = "dm" Then
+        ElseIf l = "dm" Then
             h = KMtoDM(g)
-        ElseIf L = "mm" Then
+        ElseIf l = "mm" Then
             h = KMtoMM(g)
-        ElseIf L = "m " Then
+        ElseIf l = "m " Then
             h = KMtoM(g)
-        ElseIf L = "km" Then
+        ElseIf l = "km" Then
             h = g
         End If
         Combo5.Text = Str(h)
@@ -315,11 +308,6 @@ Private Sub Form_Load()
     Combo1.Text = titlemianjidanwei
     Combo2.Text = titlechangdudanwei
     Combo3.Text = titletijidanwei
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Find the volume of a cylinder"
-    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)

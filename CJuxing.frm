@@ -1,22 +1,15 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmCJuxing 
    BackColor       =   &H00F2DED5&
    Caption         =   "求矩形周长"
    ClientHeight    =   3690
-   ClientLeft      =   3900
-   ClientTop       =   8385
+   ClientLeft      =   4065
+   ClientTop       =   8730
    ClientWidth     =   5160
    LinkTopic       =   "Form1"
    ScaleHeight     =   3690
    ScaleWidth      =   5160
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   3240
-      Top             =   3240
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
@@ -169,7 +162,7 @@ Dim f As Double
 Dim g As Double
 Dim h As Double
 Dim k As String
-Dim L As String
+Dim l As String
 Dim m As String
 
 Private Sub Combo2_KeyPress(KeyAscii As Integer)
@@ -204,7 +197,7 @@ End Sub
 
 Sub Command1_Click()
     k = Combo1.Text
-    L = Combo2.Text
+    l = Combo2.Text
     m = Combo3.Text
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
@@ -220,15 +213,15 @@ Sub Command1_Click()
     ElseIf k = "km" Then
         b = a
     End If
-    If L = "cm" Then
+    If l = "cm" Then
         d = CMtoKM(c)
-    ElseIf L = "dm" Then
+    ElseIf l = "dm" Then
         d = DMtoKM(c)
-    ElseIf L = "mm" Then
+    ElseIf l = "mm" Then
         d = MMtoKM(c)
-    ElseIf L = "m " Then
+    ElseIf l = "m " Then
         d = MtoKM(c)
-    ElseIf L = "km" Then
+    ElseIf l = "km" Then
         d = c
     End If
     If m = "cm" Then
@@ -258,15 +251,15 @@ Sub Command1_Click()
     Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f / 2 - b
-        If L = "cm" Then
+        If l = "cm" Then
             h = KMtoCM(g)
-        ElseIf L = "dm" Then
+        ElseIf l = "dm" Then
             h = KMtoDM(g)
-        ElseIf L = "mm" Then
+        ElseIf l = "mm" Then
             h = KMtoMM(g)
-        ElseIf L = "m " Then
+        ElseIf l = "m " Then
             h = KMtoM(g)
-        ElseIf L = "km" Then
+        ElseIf l = "km" Then
             h = g
         End If
         Combo5.Text = Str(h)
@@ -302,8 +295,6 @@ Private Sub Command2_Click()
 End Sub
 
 Private Sub Form_Load()
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
     Combo1.Text = titlechangdudanwei
     Combo2.Text = titlechangdudanwei
     Combo3.Text = titlechangdudanwei

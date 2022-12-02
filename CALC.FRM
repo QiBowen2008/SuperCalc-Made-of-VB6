@@ -1,9 +1,10 @@
 VERSION 5.00
+Object = "{AAC8DFAF-8A34-11D3-B327-000021C5C8A9}#1.0#0"; "SysTray.ocx"
 Begin VB.Form frmCalc 
    Appearance      =   0  'Flat
-   BackColor       =   &H00C0FFFF&
+   BackColor       =   &H80000004&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "全能计算器"
+   Caption         =   "万能计算器"
    ClientHeight    =   3675
    ClientLeft      =   3075
    ClientTop       =   2010
@@ -27,6 +28,15 @@ Begin VB.Form frmCalc
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   3675
    ScaleWidth      =   5925
+   Begin SysTrayCtl.cSysTray cSysTray1 
+      Left            =   480
+      Top             =   3120
+      _ExtentX        =   900
+      _ExtentY        =   900
+      InTray          =   0   'False
+      TrayIcon        =   "CALC.frx":030A
+      TrayTip         =   "万能计算器"
+   End
    Begin VB.TextBox Txt_Result 
       Alignment       =   1  'Right Justify
       BeginProperty Font 
@@ -857,6 +867,9 @@ Begin VB.Form frmCalc
          Caption         =   "关于"
       End
    End
+   Begin VB.Menu end 
+      Caption         =   "退出程序"
+   End
 End
 Attribute VB_Name = "frmCalc"
 Attribute VB_GlobalNameSpace = False
@@ -878,6 +891,9 @@ Dim opnre As Integer
 Dim prev As Double
 Dim oflag As Integer
 Dim ind As Integer
+Private Sub About_Click()
+    frmAbout.Show
+End Sub
 
 Private Sub BMI_Click()
     frmBMI.Show
@@ -1063,12 +1079,25 @@ Private Sub Command1_Click(Index As Integer)   '数字键
     End If
 End Sub
 
+
+
+Private Sub cSysTray1_MouseDown(Button As Integer, Id As Long)
+    frmCalc.Show
+    Me.WindowState = 0 '程序回复到Normal状态
+    Me.Visible = True '从任务栏中清除图标
+    cSysTray1.InTray = False '令程序界面可见
+End Sub
+
 Private Sub CtoF_Click()
     frmWenduhuansuan.Show
 End Sub
 
 Private Sub CYuanxing_Click()
     frmCYuanxing.Show
+End Sub
+
+Private Sub end_Click()
+    End
 End Sub
 
 Private Sub Form_Load()
@@ -1078,9 +1107,6 @@ Private Sub Form_Load()
     ind = 0
     opnre = 0
     Clipboard.Clear
-    If language = "英文" Then
-        Me.Caption = "Scientific Calculator"
-    End If
 End Sub
 
 
@@ -1103,6 +1129,43 @@ Private Sub Menu_Paste_Click()    '粘贴
     Txt_Result.Text = ""
     Txt_Result.Text = Clipboard.GetText()
 End Sub
+
+
+Private Sub Form_unload(Cancel As Integer)
+    Me.Show
+    frmAbout.Hide
+    frmBingliandianlu.Hide
+    frmBMI.Hide
+    frmCJuxing.Hide
+    frmCYuanxing.Hide
+    frmGougudingli.Hide
+    frmNjiecheng.Hide
+    frmOumudinglv.Hide
+    frmSet.Hide
+    frmSJuxing.Hide
+    frmSPingxingsibianxing1.Hide
+    frmSSanjiaoxing1.Hide
+    frmSSanjiaoxing2.Hide
+    frmSTixing1.Hide
+    frmSum.Hide
+    frmSvt.Hide
+    frmSYuanxing.Hide
+    frmSYuanzhu.Hide
+    frmVYuanzhi.Hide
+    frmWenduhuansuan.Hide
+    frmYaqiang.Hide
+    If titletuopan = "询问" Then
+        Dialog.Show
+    ElseIf titletuopan = "直接退出" Then
+        End
+    ElseIf titletuopan = "是" Then
+        Me.WindowState = 1
+        cSysTray1.InTray = True
+        Me.Visible = False
+        Cancel = True
+    End If
+End Sub
+
 Private Sub ohm_Click()
     frmOumudinglv.Show
 End Sub

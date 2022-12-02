@@ -1,17 +1,16 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSYuanxing 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求圆形面积"
    ClientHeight    =   3180
-   ClientLeft      =   225
-   ClientTop       =   690
+   ClientLeft      =   405
+   ClientTop       =   1050
    ClientWidth     =   5550
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
-      Charset         =   134
+      Charset         =   0
       Weight          =   400
       Underline       =   0   'False
       Italic          =   0   'False
@@ -22,12 +21,6 @@ Begin VB.Form frmSYuanxing
    ScaleHeight     =   3180
    ScaleWidth      =   5550
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   720
-      Top             =   2400
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360

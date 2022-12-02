@@ -1,17 +1,16 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmCYuanxing 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "求圆形周长"
    ClientHeight    =   3375
-   ClientLeft      =   225
-   ClientTop       =   690
+   ClientLeft      =   405
+   ClientTop       =   1050
    ClientWidth     =   5745
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
-      Charset         =   134
+      Charset         =   0
       Weight          =   400
       Underline       =   0   'False
       Italic          =   0   'False
@@ -22,12 +21,6 @@ Begin VB.Form frmCYuanxing
    ScaleHeight     =   3375
    ScaleWidth      =   5745
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   360
-      Top             =   2280
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.ComboBox Combo2 
       Height          =   315
       ItemData        =   "CYuanxing.frx":0000
@@ -207,3 +200,7 @@ Private Sub Command1_Click()
     Combo4.AddItem Combo4.Text
 End Sub
 
+Private Sub Form_Load()
+    Combo1.Text = titlechangdudanwei
+    Combo2.Text = titlechangdudanwei
+End Sub

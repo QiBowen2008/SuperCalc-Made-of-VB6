@@ -1,12 +1,11 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmWenduhuansuan 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "温度换算"
    ClientHeight    =   3195
-   ClientLeft      =   3825
-   ClientTop       =   7890
+   ClientLeft      =   4005
+   ClientTop       =   8250
    ClientWidth     =   4680
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -22,12 +21,6 @@ Begin VB.Form frmWenduhuansuan
    ScaleHeight     =   3195
    ScaleWidth      =   4680
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   2040
-      Top             =   2160
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command2 
       Caption         =   "复位"
       Height          =   360
@@ -134,9 +127,4 @@ End Sub
 Private Sub Command2_Click()
     Combo1.Text = ""
     Combo2.Text = ""
-End Sub
-Private Sub Form_Load()
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then Me.Caption = "CtoF"
 End Sub

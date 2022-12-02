@@ -1,24 +1,17 @@
 VERSION 5.00
-Object = "{826C7913-F2FA-4001-9902-5C755C3ABFC4}#1.0#0"; "XP窗体.ocx"
 Begin VB.Form frmSSanjiaoxing1 
    BackColor       =   &H00F2DED5&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "已知底和高求三角形面积"
    ClientHeight    =   4050
-   ClientLeft      =   1890
-   ClientTop       =   4035
+   ClientLeft      =   2070
+   ClientTop       =   4395
    ClientWidth     =   6405
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    ScaleHeight     =   4050
    ScaleWidth      =   6405
    StartUpPosition =   3  '窗口缺省
-   Begin Xp窗体.XpCorona XpCorona1 
-      Left            =   5160
-      Top             =   3480
-      _ExtentX        =   4763
-      _ExtentY        =   3466
-   End
    Begin VB.CommandButton Command1 
       Caption         =   "求值"
       Height          =   360
@@ -208,10 +201,10 @@ Sub Command1_Click()
     Dim g As Double
     Dim h As Double
     Dim k As String
-    Dim L As String
+    Dim l As String
     Dim m As String
     k = Combo1.Text
-    L = Combo2.Text
+    l = Combo2.Text
     m = Combo3.Text
     a = Val(Combo4.Text)
     c = Val(Combo5.Text)
@@ -227,15 +220,15 @@ Sub Command1_Click()
     ElseIf k = "km" Then
         b = a
     End If
-    If L = "cm" Then
+    If l = "cm" Then
         d = CMtoKM(c)
-    ElseIf L = "dm" Then
+    ElseIf l = "dm" Then
         d = DMtoKM(c)
-    ElseIf L = "mm" Then
+    ElseIf l = "mm" Then
         d = MMtoKM(c)
-    ElseIf L = "m " Then
+    ElseIf l = "m " Then
         d = MtoKM(c)
-    ElseIf L = "km" Then
+    ElseIf l = "km" Then
         d = c
     End If
     If m = "cm^2" Then
@@ -265,15 +258,15 @@ Sub Command1_Click()
     Combo4.Text = Str(h)
     ElseIf Combo5.Text = "" Then
         g = f * 2 / b
-        If L = "cm" Then
+        If l = "cm" Then
             h = KMtoCM(g)
-        ElseIf L = "dm" Then
+        ElseIf l = "dm" Then
             h = KMtoDM(g)
-        ElseIf L = "mm" Then
+        ElseIf l = "mm" Then
             h = KMtoMM(g)
-        ElseIf L = "m " Then
+        ElseIf l = "m " Then
             h = KMtoM(g)
-        ElseIf L = "km" Then
+        ElseIf l = "km" Then
             h = g
         End If
         Combo5.Text = Str(h)
@@ -312,11 +305,6 @@ Private Sub Form_Load()
     Combo1.Text = titlechangdudanwei
     Combo2.Text = titlechangdudanwei
     Combo3.Text = titlemianjidanwei
-    Command1.Caption = cmdcalccap
-    Command2.Caption = cmdrstcap
-    If language = "英文" Then
-        Me.Caption = "Find the area of the rectangle"
-    End If
 End Sub
 
 Private Sub combo1_KeyPress(KeyAscii As Integer)
